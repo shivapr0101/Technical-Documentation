@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Technical Documentation Hub — Landing Page
 
 ## Overview
@@ -51,3 +52,6 @@ Technical-Documentation/
 ## Notes
 - Keep sprint folders chronologically named (`sprint <month> <day>`) so the landing page can auto-sort "Latest Updates."
 - Consider a `Training guides/index.md` linking Basic → Advanced for a guided learning path.
+=======
+# Technical-Documentation
+>>>>>>> a2969a14d2fb64b0341da4a5f30b2c0ff6dbfdc3
