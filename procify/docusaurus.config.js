@@ -4,7 +4,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Technical Documentation',
+  title: 'Procify Technical Documentation',
   tagline: 'Procify Technical Documentation',
   favicon: 'img/favicon.ico',
 
