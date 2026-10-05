@@ -25,8 +25,8 @@ const sidebars = {
     'hello',
     {
       type: 'category',
-      label: 'Tutorial',
-      items: ['tutorial-basics/create-a-document'],
+      label: 'procify Docs',
+      items: ['Release notes/create-a-document'],
     },
   ],
    */
