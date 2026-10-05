@@ -92,32 +92,24 @@ const config = {
       },
 
       footer: {
-        style: 'dark',
-
-        links: [
-          {
-            title: 'Documentation',
-            items: [
-              {
-                label: 'User Guide',
-                to: '/docs/intro',
-              },
-            ],
-          },
-
-          {
-            title: 'Resources',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/shivapr0101/Technical-Documentation',
-              },
-            ],
-          },
-        ],
-
-        copyright: `Copyright © ${new Date().getFullYear()} Procify. Built with Docusaurus.`,
-      },
+  style: 'dark',
+  links: [
+    {
+      title: 'Documentation',
+      items: [
+        {
+          label: 'Training Guide',
+          to: '/docs/Docs/Training Guide/Basic Training',
+        },
+        {
+          label: 'Release Notes',
+          to: '/docs/Docs/Release Notes/7.7.564',
+        },
+      ],
+    },
+  ],
+  copyright: `Copyright © ${new Date().getFullYear()} Procify. All rights reserved.`,
+},
 
       prism: {
         theme: prismThemes.github,
