@@ -7,13 +7,6 @@ const sidebars = {
   technicalDocumentation: [
     {
       type: 'category',
-      label: 'User Guide',
-      collapsed: false,
-      items: [],
-    },
-
-    {
-      type: 'category',
       label: 'Training Guide',
       collapsed: false,
       items: [
