@@ -1,15 +1,45 @@
+/* =========================================================
+   PROCIFY TECHNICAL DOCUMENTATION
+   Homepage Styles
+   ========================================================= */
+
+:root {
+  --procify-blue: #1677ff;
+  --procify-dark: #071a33;
+  --procify-navy: #041225;
+  --procify-light: #f5f9ff;
+  --procify-border: #e3ebf5;
+  --procify-text: #172b4d;
+  --procify-muted: #64748b;
+}
+
+/* =========================================================
+   GLOBAL CONTAINER
+   ========================================================= */
+
+.container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .hero {
   position: relative;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  padding: 120px 24px 140px;
-  text-align: center;
 
   background:
     linear-gradient(
       135deg,
-      rgba(7, 25, 55, 0.75),
-      rgba(20, 91, 170, 0.65),
-      rgba(4, 35, 78, 0.80)
+      rgba(3, 18, 42, 0.92),
+      rgba(8, 60, 125, 0.78),
+      rgba(3, 24, 54, 0.94)
     ),
     url('/img/procify-hero-background.png');
 
@@ -18,4 +48,636 @@
   background-repeat: no-repeat;
 
   color: white;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 24px;
+  padding: 8px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #cfe3ff;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  backdrop-filter: blur(10px);
+}
+
+.heroTitle {
+  margin: 0;
+
+  color: white;
+
+  font-size: clamp(48px, 7vw, 82px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -3px;
+}
+
+.heroTitle span {
+  color: #67b5ff;
+}
+
+.heroDescription {
+  max-width: 700px;
+
+  margin: 28px auto 0;
+
+  color: #d9e8fa;
+
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.7;
+}
+
+.heroButtons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+
+  margin-top: 40px;
+
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton,
+.developerButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 50px;
+  padding: 0 24px;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.primaryButton {
+  background: white;
+  color: #0755b5;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.primaryButton:hover {
+  color: #0755b5;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
+}
+
+.secondaryButton {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  backdrop-filter: blur(8px);
+}
+
+.secondaryButton:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+.heroGlow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -200px;
+  bottom: -250px;
+
+  border-radius: 50%;
+
+  background: rgba(35, 143, 255, 0.25);
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.sectionHeading {
+  max-width: 700px;
+  margin: 0 auto 48px;
+
+  text-align: center;
+}
+
+.sectionLabel {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: var(--procify-blue);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+
+  color: var(--procify-dark);
+
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.sectionHeading p {
+  margin: 16px auto 0;
+
+  color: var(--procify-muted);
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   DOCUMENTATION SECTION
+   ========================================================= */
+
+.documentationSection {
+  padding: 100px 0;
+
+  background: white;
+}
+
+.cardsGrid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+.documentationCard {
+  position: relative;
+
+  min-height: 310px;
+
+  padding: 32px;
+
+  border: 1px solid var(--procify-border);
+  border-radius: 16px;
+
+  background: white;
+
+  box-shadow:
+    0 8px 30px rgba(18, 45, 78, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.documentationCard:hover {
+  transform: translateY(-8px);
+
+  border-color: #b8d8ff;
+
+  box-shadow:
+    0 20px 45px rgba(18, 65, 110, 0.12);
+}
+
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 24px;
+
+  border-radius: 14px;
+
+  background: #edf6ff;
+
+  font-size: 28px;
+}
+
+.documentationCard h3 {
+  margin: 0 0 12px;
+
+  color: var(--procify-dark);
+
+  font-size: 24px;
+}
+
+.documentationCard p {
+  min-height: 78px;
+
+  margin: 0;
+
+  color: var(--procify-muted);
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 24px;
+
+  color: var(--procify-blue);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.cardLink span {
+  transition: transform 0.2s ease;
+}
+
+.cardLink:hover {
+  color: #0755b5;
+}
+
+.cardLink:hover span {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   QUICK ACCESS
+   ========================================================= */
+
+.quickAccessSection {
+  padding: 100px 0;
+
+  background: #f6f9fd;
+}
+
+.quickGrid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.quickCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  padding: 25px;
+
+  border: 1px solid var(--procify-border);
+  border-radius: 14px;
+
+  background: white;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.quickCard:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(20, 55, 95, 0.08);
+}
+
+.quickIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 12px;
+
+  background: #edf6ff;
+
+  font-size: 22px;
+}
+
+.quickCard h3 {
+  margin: 2px 0 6px;
+
+  color: var(--procify-dark);
+
+  font-size: 17px;
+}
+
+.quickCard p {
+  margin: 0;
+
+  color: var(--procify-muted);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   DEVELOPER SECTION
+   ========================================================= */
+
+.developerSection {
+  padding: 90px 0;
+
+  background: white;
+}
+
+.developerBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  padding: 52px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #071a33,
+      #0a4e96
+    );
+
+  box-shadow:
+    0 20px 50px rgba(7, 39, 78, 0.18);
+}
+
+.developerBox .sectionLabel {
+  color: #7dc2ff;
+}
+
+.developerBox h2 {
+  margin: 0 0 12px;
+
+  color: white;
+
+  font-size: 36px;
+}
+
+.developerBox p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #d4e6fa;
+
+  line-height: 1.7;
+}
+
+.developerButton {
+  flex-shrink: 0;
+
+  background: white;
+
+  color: #0755b5;
+}
+
+.developerButton:hover {
+  color: #0755b5;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  padding: 50px 0 25px;
+
+  background: #041225;
+
+  color: white;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+
+  padding-bottom: 35px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footerBrand {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.footerContent p {
+  margin: 8px 0 0;
+
+  color: #91a6bd;
+
+  font-size: 14px;
+}
+
+.footerLinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  flex-wrap: wrap;
+}
+
+.footerLinks a {
+  color: #c5d3e2;
+
+  font-size: 14px;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.footerLinks a:hover {
+  color: white;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-top: 22px;
+
+  color: #71859c;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media screen and (max-width: 996px) {
+  .hero {
+    min-height: 600px;
+  }
+
+  .cardsGrid,
+  .quickGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .documentationCard {
+    min-height: auto;
+  }
+
+  .documentationCard p {
+    min-height: auto;
+  }
+
+  .developerBox {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .developerButton {
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .hero {
+    min-height: 600px;
+    padding: 80px 0;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .heroDescription {
+    font-size: 17px;
+  }
+
+  .documentationSection,
+  .quickAccessSection,
+  .developerSection {
+    padding: 70px 0;
+  }
+
+  .developerBox {
+    padding: 35px 28px;
+  }
+
+  .developerBox h2 {
+    font-size: 30px;
+  }
+
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .footerLinks {
+    gap: 18px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .documentationCard {
+    padding: 25px;
+  }
+
+  .quickCard {
+    padding: 20px;
+  }
 }
