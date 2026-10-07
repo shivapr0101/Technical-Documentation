@@ -58,63 +58,65 @@ const config = {
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      image: 'img/docusaurus-social-card.jpg',
+  themeConfig: {
+  navbar: {
+    title: 'Procify Technical Documentation',
 
-      colorMode: {
-        respectPrefersColorScheme: true,
+    logo: {
+      alt: 'Procify',
+      src: 'img/procify-logo.png',
+      width: 42,
+      height: 42,
+    },
+
+    items: [
+      {
+        label: 'Version 7.7.564',
+        position: 'left',
+        className: 'navbar-version',
       },
 
-      navbar: {
-  title: 'Procify Technical Documentation',
+      {
+        to: '/',
+        label: 'Home',
+        position: 'right',
+      },
 
-  logo: {
-    alt: 'Procify',
-    src: 'img/procify-logo.png',
-    width: 42,
-    height: 42,
+      {
+        to: '/docs/Docs/user%20Guide/basic%20user%20guide',
+        label: 'User Guide',
+        position: 'right',
+      },
+
+      {
+        to: '/docs/Docs/Training%20Guide/Basic%20Training',
+        label: 'Training Guide',
+        position: 'right',
+      },
+
+      {
+        to: '/docs/Docs/Release%20Notes/7.7.564',
+        label: 'Release Notes',
+        position: 'right',
+      },
+
+      {
+        type: 'search',
+        position: 'right',
+      },
+    ],
   },
 
-  items: [
-    {
-      label: 'Version 7.7.564',
-      position: 'left',
-      className: 'navbar-version',
+  docs: {
+    sidebar: {
+      hideable: false,
+      autoCollapseCategories: false,
     },
+  },
 
-    {
-      to: '/',
-      label: 'Home',
-      position: 'right',
-      className: 'top-nav-home',
-    },
-
-    {
-      to: '/docs/Docs/user Guide/basic user guide',
-      label: 'User Guide',
-      position: 'right',
-      className: 'top-nav-item',
-    },
-
-    {
-      to: '/docs/Docs/Training Guide/Basic Training',
-      label: 'Training Guide',
-      position: 'right',
-      className: 'top-nav-item',
-    },
-
-    {
-      to: '/docs/Docs/Release Notes/7.7.564',
-      label: 'Release Notes',
-      position: 'right',
-      className: 'top-nav-item',
-    },
-
-    {
-      type: 'search',
-      position: 'right',
-    },
-  ],
+  colorMode: {
+    defaultMode: 'light',
+    disableSwitch: true,
+    respectPrefersColorScheme: false,
+  },
 },
