@@ -68,54 +68,53 @@ const config = {
       },
 
       navbar: {
-        title: 'Technical Documentation',
+  title: 'Procify Technical Documentation',
 
-        logo: {
-          alt: 'Technical Documentation Logo',
-          src: 'img/logo.svg',
-        },
+  logo: {
+    alt: 'Procify',
+    src: 'img/procify-logo.png',
+    width: 42,
+    height: 42,
+  },
 
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'technicalDocumentation',
-            position: 'left',
-            label: 'Documentation',
-          },
-
-          {
-            href: 'https://github.com/shivapr0101/Technical-Documentation',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-
-      footer: {
-  style: 'dark',
-  links: [
+  items: [
     {
-      title: 'Documentation',
-      items: [
-        {
-          label: 'Training Guide',
-          to: '/docs/Docs/Training Guide/Basic Training',
-        },
-        {
-          label: 'Release Notes',
-          to: '/docs/Docs/Release Notes/7.7.564',
-        },
-      ],
+      label: 'Version 7.7.564',
+      position: 'left',
+      className: 'navbar-version',
+    },
+
+    {
+      to: '/',
+      label: 'Home',
+      position: 'right',
+      className: 'top-nav-home',
+    },
+
+    {
+      to: '/docs/Docs/user Guide/basic user guide',
+      label: 'User Guide',
+      position: 'right',
+      className: 'top-nav-item',
+    },
+
+    {
+      to: '/docs/Docs/Training Guide/Basic Training',
+      label: 'Training Guide',
+      position: 'right',
+      className: 'top-nav-item',
+    },
+
+    {
+      to: '/docs/Docs/Release Notes/7.7.564',
+      label: 'Release Notes',
+      position: 'right',
+      className: 'top-nav-item',
+    },
+
+    {
+      type: 'search',
+      position: 'right',
     },
   ],
-  copyright: `Copyright © ${new Date().getFullYear()} Procify. All rights reserved.`,
 },
-
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
-    }),
-};
-
-export default config;
