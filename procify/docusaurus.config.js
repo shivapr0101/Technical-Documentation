@@ -71,6 +71,14 @@ const config = {
         hideOnScroll: false,
 
         items: [
+          // HOME
+          {
+            to: '/',
+            label: 'Home',
+            position: 'left',
+          },
+
+          // DOCUMENTATION
           {
             type: 'docSidebar',
             sidebarId: 'technicalDocumentation',
@@ -78,6 +86,7 @@ const config = {
             position: 'left',
           },
 
+          // GUIDES
           {
             type: 'dropdown',
             label: 'Guides',
@@ -96,6 +105,7 @@ const config = {
             ],
           },
 
+          // RELEASE NOTES
           {
             type: 'doc',
             docId: 'Docs/Release Notes/7.7.564',
@@ -103,12 +113,14 @@ const config = {
             position: 'left',
           },
 
+          // VERSION
           {
             type: 'html',
             value: '<span class="navbar-version-label">7.7.564</span>',
             position: 'right',
           },
 
+          // SEARCH
           {
             type: 'search',
             position: 'right',
@@ -142,7 +154,8 @@ const config = {
       metadata: [
         {
           name: 'keywords',
-          content: 'Procify, documentation, user guide, training guide, release notes',
+          content:
+            'Procify, documentation, user guide, training guide, release notes',
         },
       ],
     }),
