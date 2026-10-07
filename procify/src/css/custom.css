@@ -657,26 +657,26 @@ code {
   }
 }
 /* =========================================================
-   PROCIFY NAVBAR LOGO
+   PROCIFY NAVBAR
    ========================================================= */
 
 .navbar__logo {
-  height: 28px;
-  width: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  width: 48px;
+  height: 48px;
+  margin-right: 8px;
 }
 
 .navbar__logo img {
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
   display: block;
 }
 
 .navbar__title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }

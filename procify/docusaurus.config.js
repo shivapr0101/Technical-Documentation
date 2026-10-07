@@ -64,8 +64,8 @@ const config = {
         logo: {
   alt: 'Procify',
   src: 'img/procify-logo.png',
-  width: 34,
-  height: 34,
+  width: 48,
+  height: 48,
 },
 
         hideOnScroll: false,
