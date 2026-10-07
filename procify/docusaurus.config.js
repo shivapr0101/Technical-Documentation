@@ -62,11 +62,11 @@ const config = {
         title: 'Procify',
 
         logo: {
-          alt: 'Procify',
-          src: 'img/procify-logo.png',
-          width: 34,
-          height: 34,
-        },
+  alt: 'Procify',
+  src: 'img/procify-logo.png',
+  width: 34,
+  height: 34,
+},
 
         hideOnScroll: false,
 
