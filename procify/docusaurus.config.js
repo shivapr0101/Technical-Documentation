@@ -5,14 +5,14 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Procify Technical Documentation',
-  tagline: 'Everything you need to learn, configure, and work with Procify.',
+  tagline: 'Documentation for Procify',
   favicon: 'img/favicon.ico',
 
   future: {
     v4: true,
   },
 
-  // GitHub Pages configuration
+  // GitHub Pages
   url: 'https://shivapr0101.github.io',
   baseUrl: '/Technical-Documentation/',
 
@@ -34,6 +34,14 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+
+          showLastUpdateTime: false,
+          showLastUpdateAuthor: false,
+
+          breadcrumbs: true,
+
+          remarkPlugins: [],
+          rehypePlugins: [],
         },
 
         blog: false,
@@ -48,45 +56,56 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: 'img/procify-social-card.png',
+
       navbar: {
-        title: 'Procify Technical Documentation',
+        title: 'Procify',
 
         logo: {
           alt: 'Procify',
           src: 'img/procify-logo.png',
-          width: 42,
-          height: 42,
+          width: 34,
+          height: 34,
         },
+
+        hideOnScroll: false,
 
         items: [
           {
-            label: 'Version 7.7.564',
-            to: '/docs/Docs/Release%20Notes/7.7.564',
+            type: 'docSidebar',
+            sidebarId: 'technicalDocumentation',
+            label: 'Documentation',
             position: 'left',
-            className: 'navbar-version',
           },
 
           {
-            to: '/',
-            label: 'Home',
-            position: 'right',
+            type: 'dropdown',
+            label: 'Guides',
+            position: 'left',
+            items: [
+              {
+                type: 'doc',
+                docId: 'Docs/user Guide/basic user guide',
+                label: 'User Guide',
+              },
+              {
+                type: 'doc',
+                docId: 'Docs/Training Guide/Basic Training',
+                label: 'Training Guide',
+              },
+            ],
           },
 
           {
-            to: '/docs/Docs/user%20Guide/basic%20user%20guide',
-            label: 'User Guide',
-            position: 'right',
-          },
-
-          {
-            to: '/docs/Docs/Training%20Guide/Basic%20Training',
-            label: 'Training Guide',
-            position: 'right',
-          },
-
-          {
-            to: '/docs/Docs/Release%20Notes/7.7.564',
+            type: 'doc',
+            docId: 'Docs/Release Notes/7.7.564',
             label: 'Release Notes',
+            position: 'left',
+          },
+
+          {
+            type: 'html',
+            value: '<span class="navbar-version-label">7.7.564</span>',
             position: 'right',
           },
 
@@ -99,9 +118,14 @@ const config = {
 
       docs: {
         sidebar: {
-          hideable: false,
+          hideable: true,
           autoCollapseCategories: false,
         },
+      },
+
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 4,
       },
 
       colorMode: {
@@ -114,6 +138,13 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+
+      metadata: [
+        {
+          name: 'keywords',
+          content: 'Procify, documentation, user guide, training guide, release notes',
+        },
+      ],
     }),
 };
 

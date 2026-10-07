@@ -1,8 +1,24 @@
-// @ts-check
+/**
+ * Procify Technical Documentation
+ *
+ * OpenUI5-style documentation navigation.
+ */
 
-/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   technicalDocumentation: [
+    {
+      type: 'category',
+      label: 'User Guide',
+      collapsed: false,
+      items: [
+        {
+          type: 'doc',
+          id: 'Docs/user Guide/basic user guide',
+          label: 'Basic User Guide',
+        },
+      ],
+    },
+
     {
       type: 'category',
       label: 'Training Guide',
