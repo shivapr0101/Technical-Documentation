@@ -5,7 +5,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Procify Technical Documentation',
-  tagline: 'Procify Technical Documentation',
+  tagline: 'Everything you need to learn, configure, and work with Procify.',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -59,64 +59,72 @@ const config = {
   ],
 
   themeConfig: {
-  navbar: {
-    title: 'Procify Technical Documentation',
+    navbar: {
+      title: 'Procify Technical Documentation',
 
-    logo: {
-      alt: 'Procify',
-      src: 'img/procify-logo.png',
-      width: 42,
-      height: 42,
+      logo: {
+        alt: 'Procify',
+        src: 'img/procify-logo.png',
+        width: 42,
+        height: 42,
+      },
+
+      items: [
+        {
+          label: 'Version 7.7.564',
+          position: 'left',
+          className: 'navbar-version',
+        },
+
+        {
+          to: '/',
+          label: 'Home',
+          position: 'right',
+        },
+
+        {
+          to: '/docs/Docs/user%20Guide/basic%20user%20guide',
+          label: 'User Guide',
+          position: 'right',
+        },
+
+        {
+          to: '/docs/Docs/Training%20Guide/Basic%20Training',
+          label: 'Training Guide',
+          position: 'right',
+        },
+
+        {
+          to: '/docs/Docs/Release%20Notes/7.7.564',
+          label: 'Release Notes',
+          position: 'right',
+        },
+
+        {
+          type: 'search',
+          position: 'right',
+        },
+      ],
     },
 
-    items: [
-      {
-        label: 'Version 7.7.564',
-        position: 'left',
-        className: 'navbar-version',
+    docs: {
+      sidebar: {
+        hideable: false,
+        autoCollapseCategories: false,
       },
+    },
 
-      {
-        to: '/',
-        label: 'Home',
-        position: 'right',
-      },
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
 
-      {
-        to: '/docs/Docs/user%20Guide/basic%20user%20guide',
-        label: 'User Guide',
-        position: 'right',
-      },
-
-      {
-        to: '/docs/Docs/Training%20Guide/Basic%20Training',
-        label: 'Training Guide',
-        position: 'right',
-      },
-
-      {
-        to: '/docs/Docs/Release%20Notes/7.7.564',
-        label: 'Release Notes',
-        position: 'right',
-      },
-
-      {
-        type: 'search',
-        position: 'right',
-      },
-    ],
-  },
-
-  docs: {
-    sidebar: {
-      hideable: false,
-      autoCollapseCategories: false,
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
     },
   },
+};
 
-  colorMode: {
-    defaultMode: 'light',
-    disableSwitch: true,
-    respectPrefersColorScheme: false,
-  },
-},
+export default config;
