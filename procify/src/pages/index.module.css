@@ -10,6 +10,9 @@
   --p-alt: #f8f7f6;
   --p-accent: #e61e25;
 }
+[data-theme='dark'] .hero {
+  background-image: var(--hero-bg-dark);
+}
 [data-theme='dark'] .hero,
 [data-theme='dark'] .section {
   --p-ink: #ffffff;
@@ -38,9 +41,13 @@
  
 /* Hero */
 .hero {
-  background: var(--p-surface);
+  background-color: var(--p-surface);
+  background-image: var(--hero-bg);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: cover;
   color: var(--p-ink);
-  padding: 88px 0 72px;
+  padding: 104px 0 88px;
   border-bottom: 1px solid var(--p-line);
 }
 .heroTitle {
