@@ -23,7 +23,7 @@ export default function Home() {
             <h1>Procify Technical Documentation</h1>
 
             <p>
-              Everything you need to learn, configure, and work with Procify.
+              An enterprise-class low-code platform for transforming business ideas to outcomes
             </p>
           </header>
 
