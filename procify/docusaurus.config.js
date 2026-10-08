@@ -1,278 +1,131 @@
 // @ts-check
-
 import {themes as prismThemes} from 'prism-react-renderer';
-
+ 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  // =========================================================
-  // SITE INFORMATION
-  // =========================================================
-
   title: 'Procify Technical Documentation',
-  tagline: 'Documentation for Procify',
-  favicon: 'img/favicon.ico',
-
-  future: {
-    v4: true,
-  },
-
-  // =========================================================
-  // GITHUB PAGES
-  // =========================================================
-
+  tagline: 'An enterprise-class low-code platform for transforming business ideas into outcomes',
+  favicon: 'img/favicon.ico', // change to your favicon path
+ 
+  // GitHub Pages deployment
   url: 'https://shivapr0101.github.io',
   baseUrl: '/Technical-Documentation/',
-
   organizationName: 'shivapr0101',
   projectName: 'Technical-Documentation',
-
+  trailingSlash: false,
+ 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-
-  // =========================================================
-  // INTERNATIONALIZATION
-  // =========================================================
-
+ 
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
-  // =========================================================
-  // LOCAL SEARCH
-  // =========================================================
-
-  plugins: [
-    [
-      require.resolve('@easyops-cn/docusaurus-search-local'),
-      {
-        hashed: true,
-        language: ['en'],
-
-        // Highlight searched words on the target page
-        highlightSearchTermsOnTargetPage: true,
-
-        // Open the exact search result page
-        explicitSearchResultPath: true,
-
-        // Search documentation
-        indexDocs: true,
-
-        // Do not search blog
-        indexBlog: false,
-
-        // Search other website pages
-        indexPages: true,
+ 
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'keywords',
+        content: 'Procify, documentation, user guide, training guide, release notes',
       },
-    ],
+    },
   ],
-
-  // =========================================================
-  // PRESETS
-  // =========================================================
-
+ 
   presets: [
     [
       'classic',
-
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        // -----------------------------------------------------
-        // DOCUMENTATION
-        // -----------------------------------------------------
-
         docs: {
           sidebarPath: './sidebars.js',
-
-          showLastUpdateTime: false,
-          showLastUpdateAuthor: false,
-
-          breadcrumbs: true,
-
-          remarkPlugins: [],
-          rehypePlugins: [],
+          // Remove the version dropdown/label: only one docs version is shown
+          includeCurrentVersion: true,
         },
-
-        // -----------------------------------------------------
-        // BLOG
-        // -----------------------------------------------------
-
         blog: false,
-
-        // -----------------------------------------------------
-        // THEME
-        // -----------------------------------------------------
-
         theme: {
           customCss: './src/css/custom.css',
         },
       }),
     ],
   ],
-
-  // =========================================================
-  // THEME CONFIGURATION
-  // =========================================================
-
+ 
   themeConfig:
-
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-
-      // -------------------------------------------------------
-      // SOCIAL / SEO IMAGE
-      // -------------------------------------------------------
-
       image: 'img/procify-social-card.png',
-
-      // -------------------------------------------------------
-      // NAVBAR
-      // -------------------------------------------------------
-
+ 
+      colorMode: {
+        defaultMode: 'light',
+        respectPrefersColorScheme: true,
+      },
+ 
       navbar: {
-        title: 'Procify',
-
-        // Procify logo
+        // No title: the logo already contains the Procify wordmark
         logo: {
           alt: 'Procify',
-          src: 'img/procify-logo.png',
-          width: 48,
-          height: 48,
+          src: 'img/logo.svg', // change to your logo path (e.g. img/logo.png)
         },
-
-        hideOnScroll: false,
-
         items: [
-
-          // ---------------------------------------------------
-          // HOME
-          // ---------------------------------------------------
-
+          {to: '/', label: 'Home', position: 'left', activeBaseOptional: true, exact: true},
           {
-            to: '/',
-            label: 'Home',
-            position: 'left',
-          },
-
-          // ---------------------------------------------------
-          // DOCUMENTATION
-          // ---------------------------------------------------
-
-          {
-            type: 'docSidebar',
-            sidebarId: 'technicalDocumentation',
+            to: '/docs/Docs/user Guide/basic user guide',
             label: 'Documentation',
             position: 'left',
+            activeBaseRegex: '/docs/',
           },
-
-          // ---------------------------------------------------
-          // GUIDES
-          // ---------------------------------------------------
-
           {
-            type: 'dropdown',
             label: 'Guides',
             position: 'left',
-
             items: [
-              {
-                type: 'doc',
-                docId: 'Docs/user Guide/basic user guide',
-                label: 'User Guide',
-              },
-
-              {
-                type: 'doc',
-                docId: 'Docs/Training Guide/Basic Training',
-                label: 'Training Guide',
-              },
+              {label: 'User Guide', to: '/docs/Docs/user Guide/basic user guide'},
+              {label: 'Training Guide', to: '/docs/Docs/Training Guide/Basic Training'},
             ],
           },
-
-          // ---------------------------------------------------
-          // RELEASE NOTES
-          // ---------------------------------------------------
-
           {
-            type: 'doc',
-            docId: 'Docs/Release Notes/7.7.564',
             label: 'Release Notes',
+            to: '/docs/Docs/Release Notes/7.7.564',
             position: 'left',
           },
-
-          // ---------------------------------------------------
-          // VERSION
-          // ---------------------------------------------------
-
-          {
-            type: 'html',
-            value:
-              '<span class="navbar-version-label">7.7.564</span>',
-            position: 'right',
-          },
-
-          // ---------------------------------------------------
-          // SEARCH
-          // ---------------------------------------------------
-
-          {
-            type: 'search',
-            position: 'right',
-          },
+          // The "7.7.564" version item has been removed on purpose.
+          // Do not add a docsVersionDropdown or docsVersion item here.
         ],
       },
-
-      // -------------------------------------------------------
-      // DOCUMENTATION SIDEBAR
-      // -------------------------------------------------------
-
+ 
       docs: {
         sidebar: {
           hideable: true,
-          autoCollapseCategories: false,
+          autoCollapseCategories: true,
         },
       },
-
-      // -------------------------------------------------------
-      // TABLE OF CONTENTS
-      // -------------------------------------------------------
-
-      tableOfContents: {
-        minHeadingLevel: 2,
-        maxHeadingLevel: 4,
+ 
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Documentation',
+            items: [
+              {label: 'User Guide', to: '/docs/Docs/user Guide/basic user guide'},
+              {label: 'Training Guide', to: '/docs/Docs/Training Guide/Basic Training'},
+              {label: 'Release Notes', to: '/docs/Docs/Release Notes/7.7.564'},
+            ],
+          },
+          {
+            title: 'Procify',
+            items: [
+              {label: 'Website', href: 'https://www.procifynow.com'},
+              {label: 'experts@procifynow.com', href: 'mailto:experts@procifynow.com'},
+            ],
+          },
+        ],
+        copyright: `© ${new Date().getFullYear()} Procify Innovations Pvt Ltd.`,
       },
-
-      // -------------------------------------------------------
-      // COLOR MODE
-      // -------------------------------------------------------
-
-      colorMode: {
-        defaultMode: 'light',
-        disableSwitch: true,
-        respectPrefersColorScheme: false,
-      },
-
-      // -------------------------------------------------------
-      // CODE BLOCKS
-      // -------------------------------------------------------
-
+ 
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
-
-      // -------------------------------------------------------
-      // SEO KEYWORDS
-      // -------------------------------------------------------
-
-      metadata: [
-        {
-          name: 'keywords',
-          content:
-            'Procify, documentation, user guide, training guide, release notes',
-        },
-      ],
     }),
 };
-
+ 
 export default config;
