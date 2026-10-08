@@ -1,682 +1,240 @@
-/*
- * Procify Technical Documentation
- * OpenUI5-inspired documentation UI
+/**
+ * Procify theme for Docusaurus v3
+ * Place at: src/css/custom.css
+ * Fonts: Work Sans (text) and Arimo (utility), loaded from Google Fonts.
  */
-
-/* =========================================================
-   GLOBAL
-   ========================================================= */
-
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&family=Arimo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+ 
+/* ---------- Light theme tokens ---------- */
 :root {
-  --ifm-color-primary: #0a6ed1;
-  --ifm-color-primary-dark: #095fae;
-  --ifm-color-primary-darker: #0859a4;
-  --ifm-color-primary-darkest: #064982;
-  --ifm-color-primary-light: #1689e8;
-  --ifm-color-primary-lighter: #2f98ed;
-  --ifm-color-primary-lightest: #66b7f2;
-
-  --ifm-font-family-base:
-    "72",
-    "72full",
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  --ifm-font-family-monospace:
-    "SFMono-Regular",
-    Consolas,
-    "Liberation Mono",
-    monospace;
-
-  --ifm-font-size-base: 15px;
-
-  --ifm-line-height-base: 1.55;
-
-  --ifm-navbar-height: 54px;
-
-  --ifm-menu-link-padding-horizontal: 12px;
-  --ifm-menu-link-padding-vertical: 7px;
-
-  --procify-border: #d9dfe5;
-  --procify-border-light: #e7ebef;
-
-  --procify-text: #1d2d3e;
-  --procify-muted: #5f6b76;
-
-  --procify-blue: #0a6ed1;
-  --procify-blue-light: #e8f2fc;
-
-  --procify-background: #f7f8fa;
-  --procify-surface: #ffffff;
-
-  --ifm-code-font-size: 90%;
+  --ifm-color-primary: #e61e25;
+  --ifm-color-primary-dark: #cf1b21;
+  --ifm-color-primary-darker: #c21a20;
+  --ifm-color-primary-darkest: #9f151a;
+  --ifm-color-primary-light: #e8353b;
+  --ifm-color-primary-lighter: #ea4147;
+  --ifm-color-primary-lightest: #ef6a6f;
+  --ifm-code-font-size: 95%;
+ 
+  --ifm-font-family-base: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --ifm-heading-font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --ifm-heading-font-weight: 700;
+  --ifm-font-color-base: #141111;
+  --ifm-font-color-secondary: #524d4d;
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-color-emphasis-200: #dcdad8;
+  --ifm-color-emphasis-300: #bebab8;
+  --ifm-global-radius: 8px;
+  --ifm-link-color: #e61e25;
+  --ifm-link-hover-color: #a1151a;
+ 
+  --docusaurus-highlighted-code-line-bg: rgba(230, 30, 37, 0.08);
+ 
+  /* Navbar + logo size: change --procify-logo-height to resize */
+  --procify-logo-height: 3rem;
+  --ifm-navbar-height: 4.5rem;
+  --ifm-navbar-shadow: 0 1px 0 #dcdad8;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-link-hover-color: #e61e25;
 }
-
-/* =========================================================
-   BODY
-   ========================================================= */
-
-html {
-  scroll-behavior: smooth;
+ 
+/* ---------- Dark theme tokens ---------- */
+[data-theme='dark'] {
+  --ifm-color-primary: #ee6266;
+  --ifm-color-primary-dark: #ec4a4f;
+  --ifm-color-primary-darker: #eb3d43;
+  --ifm-color-primary-darkest: #e41a21;
+  --ifm-color-primary-light: #f07a7e;
+  --ifm-color-primary-lighter: #f18589;
+  --ifm-color-primary-lightest: #f5a5a8;
+ 
+  --ifm-font-color-base: #ffffff;
+  --ifm-font-color-secondary: rgba(255, 255, 255, 0.78);
+  --ifm-background-color: #141111;
+  --ifm-background-surface-color: #1c1919;
+  --ifm-color-emphasis-200: #3a3636;
+  --ifm-color-emphasis-300: #524d4d;
+  --ifm-link-color: #ee6266;
+  --ifm-link-hover-color: #f5a5a8;
+ 
+  --docusaurus-highlighted-code-line-bg: rgba(238, 98, 102, 0.18);
+ 
+  --ifm-navbar-shadow: 0 1px 0 #3a3636;
+  --ifm-navbar-background-color: #141111;
+  --ifm-navbar-link-hover-color: #ee6266;
 }
-
+ 
+/* ---------- Base ---------- */
 body {
-  color: var(--procify-text);
-  background: var(--procify-surface);
-  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
-
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+.markdown h1:first-child {
+  letter-spacing: -0.03em;
+}
 a {
-  color: var(--procify-blue);
+  transition: color 0.2s ease;
 }
-
-a:hover {
-  color: #0854a0;
-}
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-
+ 
+/* ---------- Navbar and company logo ---------- */
 .navbar {
-  height: 54px;
-  padding: 0 22px;
-
-  background: #ffffff;
-
-  border-bottom: 1px solid var(--procify-border);
-
-  box-shadow: none;
+  height: var(--ifm-navbar-height);
+  padding: 0 1rem;
 }
-
-.navbar__inner {
-  height: 54px;
-}
-
 .navbar__brand {
-  margin-right: 28px;
+  margin-right: 1.5rem;
 }
-
 .navbar__logo {
-  height: 32px;
-  width: 32px;
-  margin-right: 9px;
+  height: var(--procify-logo-height);
+  margin-right: 0.75rem;
 }
-
+.navbar__logo img {
+  height: 100%;
+  width: auto;
+}
 .navbar__title {
-  color: #1d2d3e;
-  font-size: 18px;
+  font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.01em;
 }
-
 .navbar__link {
-  color: #354a5f;
-
-  font-size: 14px;
   font-weight: 500;
-
-  padding: 16px 13px;
-
-  transition:
-    color 0.15s ease,
-    background 0.15s ease;
 }
-
-.navbar__link:hover {
-  color: var(--procify-blue);
-  background: #f3f6f8;
-}
-
 .navbar__link--active {
-  color: var(--procify-blue);
+  color: var(--ifm-color-primary);
 }
-
-.navbar__item.dropdown > .navbar__link::after {
-  border-top-color: #667785;
+.navbar__item.dropdown .navbar__link {
+  font-weight: 500;
 }
-
-/* Version */
-
-.navbar-version-label {
-  display: inline-flex;
-
-  align-items: center;
-
-  height: 26px;
-
-  padding: 0 10px;
-
-  margin-right: 8px;
-
-  border: 1px solid #cfd8e0;
-
-  border-radius: 3px;
-
-  color: #526575;
-
-  background: #f7f9fa;
-
-  font-size: 12px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.2px;
+.dropdown__menu {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(74, 11, 13, 0.12);
 }
-
-/* Search */
-
-.navbar .DocSearch-Button {
-  height: 34px;
-
-  min-width: 190px;
-
-  margin-left: 10px;
-
-  border: 1px solid #cfd8e0;
-
-  border-radius: 3px;
-
-  background: #ffffff;
-
-  box-shadow: none;
-
-  font-size: 13px;
+.dropdown__link {
+  border-radius: 8px;
 }
-
-.navbar .DocSearch-Button:hover {
-  border-color: #9aa9b5;
-
-  background: #ffffff;
-
-  box-shadow: none;
+ 
+/* Mobile navbar */
+@media (max-width: 996px) {
+  :root {
+    --procify-logo-height: 2.5rem;
+  }
+  .navbar__title {
+    font-size: 1.1rem;
+  }
 }
-
-/* =========================================================
-   DOCUMENT PAGE LAYOUT
-   ========================================================= */
-
-.main-wrapper {
-  background: #ffffff;
+@media (max-width: 480px) {
+  :root {
+    --procify-logo-height: 2.1rem;
+  }
 }
-
-.theme-doc-page {
-  background: #ffffff;
-}
-
-.theme-doc-main-container {
-  background: #ffffff;
-}
-
-.theme-doc-markdown {
-  max-width: 920px;
-}
-
-/* =========================================================
-   LEFT SIDEBAR
-   ========================================================= */
-
-.theme-doc-sidebar-container {
-  border-right: 1px solid var(--procify-border);
-
-  background: #fafbfc;
-}
-
-.theme-doc-sidebar-menu {
-  padding: 18px 14px 30px;
-}
-
-/* Sidebar category */
-
-.menu__list-item-collapsible {
-  border-radius: 3px;
-}
-
-.menu__list-item-collapsible:hover {
-  background: #eef2f5;
-}
-
+ 
+/* ---------- Sidebar ---------- */
 .menu__link {
-  min-height: 34px;
-
-  border-radius: 3px;
-
-  color: #354a5f;
-
-  font-size: 14px;
-
-  line-height: 1.35;
-
-  transition:
-    background 0.12s ease,
-    color 0.12s ease;
+  border-radius: 8px;
+  font-weight: 500;
 }
-
-.menu__link:hover {
-  color: #0a6ed1;
-
-  background: #eef5fb;
-}
-
-.menu__link--active {
-  color: #0a6ed1 !important;
-
-  background: #e5f1fb !important;
-
-  font-weight: 600;
-
-  border-left: 3px solid #0a6ed1;
-
-  padding-left: 9px;
-}
-
-/* Category labels */
-
-.theme-doc-sidebar-item-category > .menu__list-item-collapsible > .menu__link {
-  font-weight: 600;
-
-  color: #263746;
-}
-
-/* Nested items */
-
-.menu__list .menu__list {
-  margin-left: 8px;
-
-  padding-left: 9px;
-
-  border-left: 1px solid #dce3e8;
-}
-
-.menu__list .menu__list .menu__link {
-  font-size: 13.5px;
-}
-
-/* Sidebar caret */
-
-.menu__caret {
-  opacity: 0.7;
-}
-
-/* Sidebar scrollbar */
-
-.theme-doc-sidebar-menu {
-  scrollbar-width: thin;
-}
-
-/* =========================================================
-   BREADCRUMBS
-   ========================================================= */
-
-.breadcrumbs {
-  margin-bottom: 18px;
-
-  font-size: 12px;
-}
-
-.breadcrumbs__item {
-  color: #647482;
-}
-
-.breadcrumbs__link {
-  color: #5d7180;
-}
-
-.breadcrumbs__item--active .breadcrumbs__link {
-  color: #34495a;
-
-  background: transparent;
-}
-
-/* =========================================================
-   DOCUMENT CONTENT
-   ========================================================= */
-
-.theme-doc-markdown {
-  padding-top: 12px;
-
-  padding-bottom: 50px;
-}
-
-.theme-doc-markdown h1 {
-  margin-bottom: 18px;
-
-  color: #1d2d3e;
-
-  font-size: 32px;
-
-  line-height: 1.25;
-
-  font-weight: 600;
-
-  letter-spacing: -0.3px;
-}
-
-.theme-doc-markdown h2 {
-  margin-top: 38px;
-
-  padding-bottom: 8px;
-
-  border-bottom: 1px solid #e1e6ea;
-
-  color: #263746;
-
-  font-size: 23px;
-
-  line-height: 1.3;
-
+.menu__link--active:not(.menu__link--sublist) {
+  background: rgba(230, 30, 37, 0.08);
+  color: var(--ifm-color-primary);
   font-weight: 600;
 }
-
-.theme-doc-markdown h3 {
-  margin-top: 30px;
-
-  color: #30475a;
-
-  font-size: 19px;
-
-  font-weight: 600;
+[data-theme='dark'] .menu__link--active:not(.menu__link--sublist) {
+  background: rgba(238, 98, 102, 0.14);
 }
-
-.theme-doc-markdown h4 {
-  margin-top: 25px;
-
-  color: #354a5f;
-
-  font-size: 16px;
-
-  font-weight: 600;
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-color-emphasis-200) !important;
 }
-
-.theme-doc-markdown p {
-  margin-bottom: 16px;
-
-  color: #34495a;
-
-  line-height: 1.65;
+ 
+/* ---------- Docs content ---------- */
+.markdown > h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
-
-.theme-doc-markdown li {
-  color: #34495a;
-
-  line-height: 1.6;
+.markdown img {
+  border-radius: 8px;
 }
-
-/* =========================================================
-   CODE
-   ========================================================= */
-
-code {
-  border: 1px solid #dce3e8;
-
-  border-radius: 3px;
-
-  background: #f4f6f8;
-
-  color: #374a5a;
-
-  padding: 2px 5px;
-}
-
-.theme-code-block {
-  border: 1px solid #dce3e8;
-
-  border-radius: 4px;
-
-  box-shadow: none;
-}
-
-/* =========================================================
-   TABLES
-   ========================================================= */
-
-.theme-doc-markdown table {
-  width: 100%;
-
+.markdown table {
   display: table;
-
+  width: 100%;
   border-collapse: collapse;
-
-  margin: 24px 0;
-
-  border: 1px solid #d8e0e6;
-
-  font-size: 14px;
 }
-
-.theme-doc-markdown table th {
-  padding: 10px 12px;
-
-  background: #f2f5f7;
-
-  border: 1px solid #d8e0e6;
-
-  color: #263746;
-
+.markdown table th {
+  background: var(--ifm-background-surface-color);
   font-weight: 600;
-
   text-align: left;
 }
-
-.theme-doc-markdown table td {
-  padding: 10px 12px;
-
-  border: 1px solid #d8e0e6;
-
-  color: #3d5060;
-
-  vertical-align: top;
+.markdown table th,
+.markdown table td {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  padding: 0.65rem 0.9rem;
 }
-
-.theme-doc-markdown table tr:nth-child(even) td {
-  background: #fafbfc;
-}
-
-/* =========================================================
-   ADMONITIONS
-   ========================================================= */
-
-.alert {
-  border-radius: 3px;
-
-  border-width: 1px;
-
-  box-shadow: none;
-}
-
-.alert--info {
-  background: #eef7ff;
-
-  border-color: #b7d7f5;
-}
-
-.alert--warning {
-  background: #fff8e6;
-
-  border-color: #f2d58b;
-}
-
-.alert--success {
-  background: #eff9f1;
-
-  border-color: #b9dfc0;
-}
-
-.alert--danger {
-  background: #fff1f0;
-
-  border-color: #efb5b0;
-}
-
-/* =========================================================
-   RIGHT "ON THIS PAGE" NAVIGATION
-   ========================================================= */
-
-.table-of-contents {
-  border-left: 1px solid #dfe5e9;
-
-  padding-left: 18px;
-
-  font-size: 13px;
-}
-
-.table-of-contents__link {
-  color: #607382;
-
-  line-height: 1.45;
-}
-
-.table-of-contents__link:hover {
-  color: #0a6ed1;
-}
-
 .table-of-contents__link--active {
-  color: #0a6ed1;
-
+  color: var(--ifm-color-primary);
   font-weight: 600;
 }
-
-/* =========================================================
-   DOC PAGINATION
-   ========================================================= */
-
-.pagination-nav {
-  margin-top: 45px;
-
-  padding-top: 20px;
-
-  border-top: 1px solid #e1e6ea;
-}
-
 .pagination-nav__link {
-  border: 1px solid #d8e0e6;
-
-  border-radius: 4px;
-
-  box-shadow: none;
-
-  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
 .pagination-nav__link:hover {
-  border-color: #0a6ed1;
-
-  background: #f5faff;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 8px 24px rgba(74, 11, 13, 0.1);
 }
-
-.pagination-nav__sublabel {
-  color: #71808c;
-
-  font-size: 12px;
+ 
+/* ---------- Admonitions and code ---------- */
+.alert {
+  border-radius: 12px;
 }
-
-.pagination-nav__label {
-  color: #0a6ed1;
-
-  font-size: 14px;
+code {
+  border-radius: 6px;
 }
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
+pre code {
+  border-radius: 0;
+}
+ 
+/* ---------- Buttons ---------- */
+.button--primary {
+  color: #ffffff;
+  font-weight: 600;
+}
+.button--primary:hover {
+  color: #ffffff;
+}
+ 
+/* ---------- Footer ---------- */
 .footer {
-  padding: 28px 0;
-
-  background: #1d2d3e;
-
-  color: #dce5eb;
+  background: #0a0808;
+  color: rgba(255, 255, 255, 0.78);
 }
-
 .footer__title {
   color: #ffffff;
-
-  font-size: 14px;
-}
-
-.footer__item {
-  font-size: 13px;
-}
-
-.footer__link-item {
-  color: #c5d2dc;
-}
-
-.footer__link-item:hover {
-  color: #ffffff;
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media screen and (max-width: 996px) {
-  .navbar {
-    padding: 0 12px;
-  }
-
-  .navbar__title {
-    font-size: 16px;
-  }
-
-  .navbar-version-label {
-    display: none;
-  }
-
-  .navbar .DocSearch-Button {
-    min-width: auto;
-
-    width: 42px;
-
-    padding: 0;
-  }
-
-  .theme-doc-markdown h1 {
-    font-size: 28px;
-  }
-
-  .theme-doc-markdown h2 {
-    font-size: 21px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .navbar__brand {
-    margin-right: 5px;
-  }
-
-  .navbar__title {
-    font-size: 15px;
-  }
-
-  .theme-doc-markdown {
-    padding-left: 4px;
-
-    padding-right: 4px;
-  }
-}
-/* =========================================================
-   PROCIFY NAVBAR
-   ========================================================= */
-
-.navbar__logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  margin-right: 8px;
-}
-
-.navbar__logo img {
-  width: 44px;
-  height: 44px;
-  object-fit: contain;
-  display: block;
-}
-
-.navbar__title {
-  font-size: 18px;
   font-weight: 600;
+}
+.footer__link-item {
+  color: rgba(255, 255, 255, 0.78);
+}
+.footer__link-item:hover {
+  color: #ee6266;
+  text-decoration: none;
+}
+.footer__copyright {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+}
+ 
+/* ---------- Focus ---------- */
+:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
 }
