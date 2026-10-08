@@ -5,7 +5,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Procify Technical Documentation',
   tagline: 'An enterprise-class low-code platform for transforming business ideas into outcomes',
-  favicon: 'img/favicon.ico', // change to your favicon path
+  favicon: 'img/procify-favicon.png',
  
   // GitHub Pages deployment
   url: 'https://shivapr0101.github.io',
@@ -64,7 +64,9 @@ const config = {
         // No title: the logo already contains the Procify wordmark
         logo: {
           alt: 'Procify',
-          src: 'img/logo.svg', // change to your logo path (e.g. img/logo.png)
+          src: 'img/procify-logo.png',
+          srcDark: 'img/procify-logo-dark.png',
+          href: '/',
         },
         items: [
           {to: '/', label: 'Home', position: 'left', activeBaseOptional: true, exact: true},
@@ -88,7 +90,6 @@ const config = {
             position: 'left',
           },
           // The "7.7.564" version item has been removed on purpose.
-          // Do not add a docsVersionDropdown or docsVersion item here.
         ],
       },
  
