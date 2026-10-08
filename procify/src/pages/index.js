@@ -1,133 +1,73 @@
 import React from 'react';
-
-import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import Layout from '@theme/Layout';
+import './index.css';
 
-import styles from './index.module.css';
+const features = [
+  'Low-code visual tools',
+  'Deploy anywhere',
+  'Online & offline',
+  'Enterprise integrations',
+  'Monthly updates',
+];
+
+const solutions = [
+  'Asset Management',
+  'Warehouse Mobility',
+  'Track & Trace',
+  'STO Management',
+  'Field Service',
+  'B2B Complaints',
+];
 
 export default function Home() {
   return (
-    <Layout
-      title="Procify Technical Documentation"
-      description="Procify Technical Documentation"
-    >
-      <main className={styles.page}>
+    <Layout title="Procify Technical Documentation">
+      <main>
+        <section className="hero">
+          <p>BUILT FOR WHAT YOU RUN</p>
+          <h1>Procify Technical Documentation</h1>
+          <h2>
+            An enterprise-class low-code platform for transforming business
+            ideas into outcomes.
+          </h2>
 
-        <div className={styles.container}>
+          <Link className="button button--primary" to="/docs/Docs/user%20Guide/basic%20user%20guide">
+            Explore Documentation
+          </Link>
+        </section>
 
-          <div className={styles.breadcrumb}>
-            Documentation
+        <section className="section">
+          <h2>Key Features</h2>
+          <div className="grid">
+            {features.map(x => <div className="card" key={x}>{x}</div>)}
           </div>
+        </section>
 
-          <header className={styles.header}>
-            <h1>Procify Technical Documentation</h1>
+        <section className="section">
+          <h2>Ready-to-Deploy Solutions</h2>
+          <div className="grid">
+            {solutions.map(x => <div className="card" key={x}>{x}</div>)}
+          </div>
+        </section>
 
-            <p>
-              An enterprise-class low-code platform for transforming business ideas to outcomes
-            </p>
-          </header>
+        <section className="section dark">
+          <h2>One Platform. Two Builders.</h2>
+          <div className="grid">
+            <div className="card">Business Users<br /><b>No Code</b></div>
+            <div className="card">Developers<br /><b>Low Code</b></div>
+          </div>
+        </section>
 
-          <div className={styles.divider} />
-
-          <section className={styles.section}>
-
-            <h2>Documentation</h2>
-
-            <div className={styles.grid}>
-
-              <Link
-                className={styles.card}
-                to="/docs/Docs/user%20Guide/basic%20user%20guide"
-              >
-                <div className={styles.cardIcon}>
-                  📘
-                </div>
-
-                <div>
-                  <h3>User Guide</h3>
-
-                  <p>
-                    Learn how to configure and use Procify features and
-                    functionality.
-                  </p>
-
-                  <span>
-                    Open User Guide →
-                  </span>
-                </div>
-              </Link>
-
-              <Link
-                className={styles.card}
-                to="/docs/Docs/Training%20Guide/Basic%20Training"
-              >
-                <div className={styles.cardIcon}>
-                  🎓
-                </div>
-
-                <div>
-                  <h3>Training Guide</h3>
-
-                  <p>
-                    Follow structured training material to learn Procify
-                    development and configuration.
-                  </p>
-
-                  <span>
-                    Open Training Guide →
-                  </span>
-                </div>
-              </Link>
-
-              <Link
-                className={styles.card}
-                to="/docs/Docs/Release%20Notes/7.7.564"
-              >
-                <div className={styles.cardIcon}>
-                  📋
-                </div>
-
-                <div>
-                  <h3>Release Notes</h3>
-
-                  <p>
-                    Review new features, enhancements, fixes, and changes
-                    introduced in Procify releases.
-                  </p>
-
-                  <span>
-                    View Release Notes →
-                  </span>
-                </div>
-              </Link>
-
-            </div>
-          </section>
-
-          <section className={styles.quickLinks}>
-
-            <h2>Quick Access</h2>
-
-            <div className={styles.quickGrid}>
-
-              <Link to="/docs/Docs/user%20Guide/basic%20user%20guide">
-                Getting Started
-              </Link>
-
-              <Link to="/docs/Docs/Training%20Guide/Basic%20Training">
-                Basic Training
-              </Link>
-
-              <Link to="/docs/Docs/Release%20Notes/7.7.564">
-                What's New
-              </Link>
-
-            </div>
-
-          </section>
-
-        </div>
-
+        <section className="section">
+          <h2>Get Started</h2>
+          <p>
+            Everything you need to learn, configure, and work with Procify.
+          </p>
+          <Link className="button button--primary" to="/docs/Docs/Training%20Guide/Basic%20Training">
+            Training Guide
+          </Link>
+        </section>
       </main>
     </Layout>
   );
