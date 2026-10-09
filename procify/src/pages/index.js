@@ -3,17 +3,18 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
 import styles from './index.module.css';
- 
-/* ---- Content: edit here when a new release ships ---- */
+
+/* Latest release */
 const LATEST_RELEASE = '7.7.564';
- 
+
 const LINKS = {
-  userGuide: '/docs/Docs/user Guide/basic user guide',
-  trainingGuide: '/docs/Docs/Training Guide/Basic Training',
-  releaseNotes: `/docs/Docs/Release Notes/${LATEST_RELEASE}`,
+  userGuide: '/docs/Docs/user%20Guide/basic%20user%20guide',
+  trainingGuide: '/docs/Docs/Training%20Guide/Basic%20Training',
+  releaseNotes: `/docs/Docs/Release%20Notes/${LATEST_RELEASE}`,
 };
- 
+
 const CARDS = [
   {
     icon: '📘',
@@ -37,8 +38,8 @@ const CARDS = [
     to: LINKS.releaseNotes,
   },
 ];
- 
-/* Lucide icons (ISC licence), 1.5px stroke as in the Procify design system */
+
+/* Feature icons */
 const ICONS = {
   layout: (
     <>
@@ -81,7 +82,7 @@ const ICONS = {
     </>
   ),
 };
- 
+
 const FEATURES = [
   {
     icon: 'layout',
@@ -109,13 +110,13 @@ const FEATURES = [
     text: 'Procify releases improvements every month, without rebuilding your apps from scratch.',
   },
 ];
- 
+
 const QUICK_LINKS = [
   { label: 'Getting Started', to: LINKS.userGuide },
   { label: 'Basic Training', to: LINKS.trainingGuide },
   { label: "What's New", to: LINKS.releaseNotes },
 ];
- 
+
 function Icon({ name }) {
   return (
     <svg
@@ -126,58 +127,83 @@ function Icon({ name }) {
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
-      aria-hidden="true">
+      aria-hidden="true"
+    >
       {ICONS[name]}
     </svg>
   );
 }
- 
+
 function Hero() {
-  // useBaseUrl adds the site's baseUrl (/Technical-Documentation/) to the image paths
-  const heroBg = useBaseUrl('/img/procify-docs-hero-light@2x.png');
-  const heroBgDark = useBaseUrl('/img/procify-docs-hero-dark@2x.png');
- 
+  const heroBackground = useBaseUrl(
+    '/img/procify-docs-hero-light_2x.png',
+  );
+
   return (
     <header
-      className={styles.hero}
+      className={styles.heroBanner}
       style={{
-        '--hero-bg': `url("${heroBg}")`,
-        '--hero-bg-dark': `url("${heroBgDark}")`,
-      }}>
+        backgroundImage: `linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.94) 0%,
+          rgba(255, 255, 255, 0.78) 48%,
+          rgba(255, 255, 255, 0.18) 100%
+        ), url("${heroBackground}")`,
+      }}
+    >
       <div className={styles.container}>
         <p className={styles.eyebrow}>Documentation</p>
-        <h1 className={styles.heroTitle}>Procify Technical Documentation</h1>
+
+        <h1 className={styles.heroTitle}>
+          Procify Technical Documentation
+        </h1>
+
         <p className={styles.heroLead}>
-          An enterprise-class low-code platform for transforming business ideas into outcomes.
+          An enterprise-class low-code platform for transforming business
+          ideas into outcomes.
         </p>
+
         <div className={styles.actions}>
           <Link className={styles.btnPrimary} to={LINKS.userGuide}>
             Get started →
           </Link>
+
           <Link className={styles.btnGhost} to={LINKS.releaseNotes}>
             What&apos;s new in {LATEST_RELEASE}
           </Link>
         </div>
-        <span className={styles.version}>Latest release {LATEST_RELEASE}</span>
+
+        <span className={styles.version}>
+          Latest release {LATEST_RELEASE}
+        </span>
       </div>
     </header>
   );
 }
- 
+
 function DocCards() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.h2}>Find what you need</h2>
+
         <div className={styles.cards}>
           {CARDS.map((card) => (
-            <Link key={card.title} className={styles.card} to={card.to}>
+            <Link
+              key={card.title}
+              className={styles.card}
+              to={card.to}
+            >
               <span className={styles.cardIcon} aria-hidden="true">
                 {card.icon}
               </span>
+
               <h3 className={styles.cardTitle}>{card.title}</h3>
               <p className={styles.cardText}>{card.text}</p>
-              <span className={styles.cardCta}>{card.cta} →</span>
+
+              <span className={styles.cardCta}>
+                {card.cta} →
+              </span>
             </Link>
           ))}
         </div>
@@ -185,21 +211,26 @@ function DocCards() {
     </section>
   );
 }
- 
+
 function Features() {
   return (
     <section className={`${styles.section} ${styles.alt}`}>
       <div className={styles.container}>
         <p className={styles.eyebrow}>Key features</p>
+
         <h2 className={styles.h2}>
           Configure enterprise apps visually, then run them on web and mobile
         </h2>
+
         <ul className={styles.features}>
           {FEATURES.map((feature) => (
             <li key={feature.title} className={styles.feature}>
               <Icon name={feature.icon} />
+
               <div>
-                <h3 className={styles.featureTitle}>{feature.title}</h3>
+                <h3 className={styles.featureTitle}>
+                  {feature.title}
+                </h3>
                 <p className={styles.featureText}>{feature.text}</p>
               </div>
             </li>
@@ -209,15 +240,20 @@ function Features() {
     </section>
   );
 }
- 
+
 function QuickAccess() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.h2}>Quick access</h2>
+
         <div className={styles.quick}>
           {QUICK_LINKS.map((link) => (
-            <Link key={link.label} className={styles.pill} to={link.to}>
+            <Link
+              key={link.label}
+              className={styles.pill}
+              to={link.to}
+            >
               {link.label}
             </Link>
           ))}
@@ -226,12 +262,17 @@ function QuickAccess() {
     </section>
   );
 }
- 
+
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+
   return (
-    <Layout title={siteConfig.title} description="Procify Technical Documentation">
+    <Layout
+      title={siteConfig.title}
+      description={siteConfig.tagline}
+    >
       <Hero />
+
       <main>
         <DocCards />
         <Features />
