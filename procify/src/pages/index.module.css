@@ -1,248 +1,242 @@
-.hero,
-.section {
-  --p-red: #e61e25;
-  --p-red-hover: #a1151a;
-  --p-ink: #141111;
-  --p-ink-2: #524d4d;
-  --p-ink-3: #6e6868;
-  --p-line: #dcdad8;
-  --p-surface: #ffffff;
-  --p-alt: #f8f7f6;
-  --p-accent: #e61e25;
+/* src/pages/index.module.css */
+
+/* Main hero section */
+.heroBanner {
+position: relative;
+overflow: hidden;
+padding: 6rem 2rem;
+min-height: 460px;
+display: flex;
+align-items: center;
+
+background-color: #ffffff;
+background-image:
+linear-gradient(
+90deg,
+rgba(255, 255, 255, 0.97) 0%,
+rgba(255, 255, 255, 0.91) 42%,
+rgba(255, 255, 255, 0.48) 72%,
+rgba(255, 255, 255, 0.18) 100%
+),
+url('/Technical-Documentation/img/procify-docs-hero-light.png');
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
 }
-[data-theme='dark'] .hero {
-  background-image: var(--hero-bg-dark);
+
+/* Hero content container */
+.heroBanner (.container) {
+position: relative;
+z-index: 1;
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
 }
-[data-theme='dark'] .hero,
-[data-theme='dark'] .section {
-  --p-ink: #ffffff;
-  --p-ink-2: rgba(255, 255, 255, 0.78);
-  --p-ink-3: rgba(255, 255, 255, 0.65);
-  --p-line: #3a3636;
-  --p-surface: #141111;
-  --p-alt: #1c1919;
-  --p-accent: #ee6266;
+
+/* Main heading */
+.heroBanner h1 {
+max-width: 850px;
+margin-bottom: 1.25rem;
+color: #b5121b;
+font-size: clamp(2.4rem, 5vw, 4rem);
+font-weight: 750;
+line-height: 1.15;
+letter-spacing: -1.5px;
 }
- 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+
+/* Description below heading */
+.heroBanner p {
+max-width: 720px;
+margin: 0 auto 2rem;
+color: #3c4654;
+font-size: clamp(1.05rem, 2vw, 1.3rem);
+line-height: 1.8;
 }
- 
-.eyebrow {
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--p-accent);
-  margin: 0 0 16px;
+
+/* Hero buttons */
+.buttons {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+margin-top: 2rem;
 }
- 
-/* Hero */
-.hero {
-  background-color: var(--p-surface);
-  background-image: var(--hero-bg);
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-size: cover;
-  color: var(--p-ink);
-  padding: 104px 0 88px;
-  border-bottom: 1px solid var(--p-line);
+
+/* Primary action */
+.buttons a {
+border: 1px solid #b5121b;
+border-radius: 6px;
+background: #b5121b;
+color: #ffffff;
+padding: 0.85rem 1.6rem;
+font-size: 1rem;
+font-weight: 600;
+text-decoration: none;
+transition:
+background-color 0.2s ease,
+transform 0.2s ease,
+box-shadow 0.2s ease;
 }
-.heroTitle {
-  font-size: clamp(2.25rem, 5vw, 3.75rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  font-weight: 700;
-  max-width: 18ch;
-  margin: 0;
-  color: var(--p-ink);
+
+.buttons a:first-child {
+background: #8f0d15;
+border-color: #8f0d15;
+color: #ffffff;
+transform: translateY(-2px);
+box-shadow: 0 6px 18px rgba(181, 18, 27, 0.2);
 }
-.heroLead {
-  font-size: 1.25rem;
-  line-height: 1.5;
-  color: var(--p-ink-2);
-  max-width: 52ch;
-  margin: 24px 0 0;
+
+/* Secondary action */
+.buttons a() {
+border: 1px solid #b5121b;
+border-radius: 6px;
+background: rgba(255, 255, 255, 0.85);
+color: #b5121b;
+padding: 0.85rem 1.6rem;
+font-size: 1rem;
+font-weight: 600;
+text-decoration: none;
+transition:
+background-color 0.2s ease,
+transform 0.2s ease;
 }
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 36px;
+
+.buttons a() {
+background: #fff0f0;
+color: #8f0d15;
+transform: translateY(-2px);
 }
-.btnPrimary,
-.btnGhost {
-  display: inline-flex;
-  align-items: center;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 14px 26px;
-  border-radius: 8px;
-  text-decoration: none !important;
-  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-}
-.btnPrimary {
-  background: var(--p-red);
-  color: #ffffff !important;
-}
-.btnPrimary:hover {
-  background: var(--p-red-hover);
-}
-.btnGhost {
-  color: var(--p-ink) !important;
-  border: 1px solid var(--p-line);
-}
-.btnGhost:hover {
-  border-color: var(--p-ink-3);
-}
-.version {
-  display: inline-block;
-  margin-top: 28px;
-  font-size: 0.875rem;
-  color: var(--p-ink-3);
-  border: 1px solid var(--p-line);
-  border-radius: 999px;
-  padding: 4px 12px;
-}
- 
-/* Sections */
-.section {
-  background: var(--p-surface);
-  color: var(--p-ink);
-  padding: 72px 0;
-}
-.alt {
-  background: var(--p-alt);
-}
-.h2 {
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-  font-weight: 700;
-  max-width: 24ch;
-  margin: 0 0 40px;
-  color: var(--p-ink);
-}
- 
-/* Guide cards */
-.cards {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 28px;
-  background: var(--p-surface);
-  border: 1px solid var(--p-line);
-  border-radius: 12px;
-  color: var(--p-ink) !important;
-  text-decoration: none !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-.card:hover {
-  transform: translateY(-3px);
-  border-color: var(--p-accent);
-  box-shadow: 0 12px 32px rgba(74, 11, 13, 0.12);
-}
-.cardIcon {
-  font-size: 1.75rem;
-  line-height: 1;
-}
-.cardTitle {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin: 8px 0 0;
-  color: var(--p-ink);
-}
-.cardText {
-  color: var(--p-ink-2);
-  margin: 0;
-  flex: 1;
-}
-.cardCta {
-  margin-top: 12px;
-  font-weight: 600;
-  color: var(--p-accent);
-}
- 
-/* Features */
+
+/* Documentation feature section */
 .features {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0 56px;
-  grid-template-columns: repeat(2, 1fr);
-  border-top: 1px solid var(--p-line);
+display: flex;
+align-items: stretch;
+padding: 4rem 0;
+width: 100%;
+background: #ffffff;
 }
+
+/* Individual feature column */
 .feature {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 18px;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--p-line);
+padding: 1.25rem;
 }
-.featureIcon {
-  width: 32px;
-  height: 32px;
-  color: var(--p-ink);
-  margin-top: 2px;
+
+/* Feature title */
+.feature h2 {
+margin-bottom: 0.75rem;
+color: #b5121b;
+font-size: 1.4rem;
+font-weight: 700;
 }
-.featureTitle {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin: 0 0 6px;
-  color: var(--p-ink);
+
+/* Feature description */
+.feature p {
+color: #566170;
+font-size: 1rem;
+line-height: 1.75;
 }
-.featureText {
-  margin: 0;
-  color: var(--p-ink-2);
+
+/* Feature links */
+.feature a {
+color: #b5121b;
+font-weight: 600;
+text-decoration: none;
 }
- 
-/* Quick access */
-.quick {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+
+.feature a {
+color: #8f0d15;
+text-decoration: underline;
 }
-.pill {
-  padding: 12px 22px;
-  border: 1px solid var(--p-line);
-  border-radius: 999px;
-  font-weight: 600;
-  color: var(--p-ink) !important;
-  text-decoration: none !important;
-  transition: border-color 0.2s ease, color 0.2s ease;
+
+/* Feature cards, if used in the homepage */
+.featureCard {
+height: 100%;
+padding: 1.75rem;
+border: 1px solid #e8e8e8;
+border-top: 3px solid #b5121b;
+border-radius: 10px;
+background: #ffffff;
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease;
 }
-.pill:hover {
-  border-color: var(--p-accent);
-  color: var(--p-accent) !important;
+
+.featureCard {
+transform: translateY(-4px);
+box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
 }
- 
-/* Responsive */
-@media (max-width: 996px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-  .features {
-    grid-template-columns: 1fr;
-  }
+
+/* Responsive layout for tablets and mobile devices */
+@media screen and (max-width: 996px) {
+.heroBanner {
+min-height: 400px;
+padding: 4rem 1.5rem;
+background-position: 60% center;
 }
-@media (max-width: 600px) {
-  .hero {
-    padding: 56px 0 48px;
-  }
-  .section {
-    padding: 48px 0;
-  }
-  .btnPrimary,
-  .btnGhost {
-    width: 100%;
-    justify-content: center;
-  }
+
+.heroBanner h1 {
+letter-spacing: -0.8px;
+}
+
+.features {
+padding: 2.5rem 0;
+}
+}
+
+@media screen and (max-width: 576px) {
+.heroBanner {
+min-height: 360px;
+padding: 3rem 1rem;
+background-image:
+linear-gradient(
+rgba(255, 255, 255, 0.88),
+rgba(255, 255, 255, 0.94)
+),
+url('/Technical-Documentation/img/procify-docs-hero-light.png');
+background-position: center;
+}
+
+.heroBanner h1 {
+font-size: 2.2rem;
+line-height: 1.2;
+}
+
+.heroBanner p {
+font-size: 1rem;
+line-height: 1.65;
+}
+
+.buttons {
+flex-direction: column;
+align-items: stretch;
+gap: 0.75rem;
+}
+
+.buttons a {
+text-align: center;
+}
+
+.features {
+padding: 2rem 0;
+}
+
+.feature {
+padding: 0.75rem;
+}
+}
+
+/* Accessibility: reduce motion when requested */
+@media (prefers-reduced-motion: reduce) {
+.buttons a,
+.featureCard {
+transition: none;
+}
+
+.buttons a,
+.featureCard {
+transform: none;
+}
 }

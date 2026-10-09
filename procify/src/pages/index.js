@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './index.module.css';
  
 const VERSION = '7.7.564';
@@ -106,8 +107,12 @@ const quick = [
 ];
  
 function Hero() {
+  const bgLight = useBaseUrl('/img/procify-hero-bg.svg');
+  const bgDark = useBaseUrl('/img/procify-hero-bg-dark.svg');
   return (
-    <header className={styles.hero}>
+    <header
+      className={styles.hero}
+      style={{'--hero-bg': `url(${bgLight})`, '--hero-bg-dark': `url(${bgDark})`}}>
       <div className={styles.container}>
         <p className={styles.eyebrow}>Documentation</p>
         <Heading as="h1" className={styles.heroTitle}>
