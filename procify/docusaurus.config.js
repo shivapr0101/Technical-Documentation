@@ -1,5 +1,8 @@
 // @ts-check
 import {themes as prismThemes} from 'prism-react-renderer';
+import {createRequire} from 'module';
+
+const require = createRequire(import.meta.url);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -39,23 +42,21 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           sidebarPath: './sidebars.js',
           includeCurrentVersion: true,
+          breadcrumbs: true,
         },
-
         blog: false,
-
         theme: {
           customCss: './src/css/custom.css',
         },
-      }),
+      },
     ],
   ],
 
-  // Documentation Search
+  // Local documentation search
   plugins: [
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
@@ -69,121 +70,130 @@ const config = {
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      image: 'img/procify-social-card.png',
+  themeConfig: {
+    image: 'img/procify-social-card.png',
 
-      colorMode: {
-        defaultMode: 'light',
-        respectPrefersColorScheme: true,
+    colorMode: {
+      defaultMode: 'light',
+      respectPrefersColorScheme: false,
+      disableSwitch: false,
+    },
+
+    navbar: {
+      title: 'Procify Documentation',
+
+      logo: {
+        alt: 'Procify',
+        src: 'img/procify-logo.png',
+        srcDark: 'img/procify-logo-dark.png',
+        href: '/Technical-Documentation/',
       },
 
-      navbar: {
-        logo: {
-          alt: 'Procify',
-          src: 'img/procify-logo.png',
-          srcDark: 'img/procify-logo-dark.png',
-          href: '/Technical-Documentation/',
+      items: [
+        {
+          to: '/',
+          label: 'Home',
+          position: 'left',
+          activeBaseOptional: true,
+          exact: true,
         },
-
-        items: [
-          {
-            to: '/',
-            label: 'Home',
-            position: 'left',
-            activeBaseOptional: true,
-            exact: true,
-          },
-
-          {
-            to: '/docs/Docs/user Guide/basic user guide',
-            label: 'Documentation',
-            position: 'left',
-            activeBaseRegex: '/docs/',
-          },
-
-          {
-            label: 'Guides',
-            position: 'left',
-            items: [
-              {
-                label: 'User Guide',
-                to: '/docs/Docs/user Guide/basic user guide',
-              },
-              {
-                label: 'Training Guide',
-                to: '/docs/Docs/Training Guide/Basic Training',
-              },
-            ],
-          },
-
-          {
-            label: 'Release Notes',
-            to: '/docs/Docs/Release Notes/7.7.564',
-            position: 'left',
-          },
-
-          // Search
-          {
-            type: 'search',
-            position: 'right',
-          },
-        ],
-      },
-
-      docs: {
-        sidebar: {
-          hideable: true,
-          autoCollapseCategories: true,
+        {
+          to: '/docs/Docs/user Guide/basic user guide',
+          label: 'Documentation',
+          position: 'left',
+          activeBaseRegex: '/docs/',
         },
+        {
+          label: 'Guides',
+          position: 'left',
+          items: [
+            {
+              label: 'User Guide',
+              to: '/docs/Docs/user Guide/basic user guide',
+            },
+            {
+              label: 'Training Guide',
+              to: '/docs/Docs/Training Guide/Basic Training',
+            },
+          ],
+        },
+        {
+          label: 'Release Notes',
+          to: '/docs/Docs/Release Notes/7.7.564',
+          position: 'left',
+        },
+        {
+          type: 'search',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/shivapr0101/Technical-Documentation',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
+    },
+
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
       },
+    },
 
-      footer: {
-        style: 'dark',
+    footer: {
+      style: 'light',
 
-        links: [
-          {
-            title: 'Documentation',
-            items: [
-              {
-                label: 'User Guide',
-                to: '/docs/Docs/user Guide/basic user guide',
-              },
-              {
-                label: 'Training Guide',
-                to: '/docs/Docs/Training Guide/Basic Training',
-              },
-              {
-                label: 'Release Notes',
-                to: '/docs/Docs/Release Notes/7.7.564',
-              },
-            ],
-          },
+      links: [
+        {
+          title: 'Documentation',
+          items: [
+            {
+              label: 'User Guide',
+              to: '/docs/Docs/user Guide/basic user guide',
+            },
+            {
+              label: 'Training Guide',
+              to: '/docs/Docs/Training Guide/Basic Training',
+            },
+            {
+              label: 'Release Notes',
+              to: '/docs/Docs/Release Notes/7.7.564',
+            },
+          ],
+        },
+        {
+          title: 'Procify',
+          items: [
+            {
+              label: 'Website',
+              href: 'https://www.procifynow.com',
+            },
+            {
+              label: 'experts@procifynow.com',
+              href: 'mailto:experts@procifynow.com',
+            },
+          ],
+        },
+        {
+          title: 'Developer Resources',
+          items: [
+            {
+              label: 'GitHub Repository',
+              href: 'https://github.com/shivapr0101/Technical-Documentation',
+            },
+          ],
+        },
+      ],
 
-          {
-            title: 'Procify',
-            items: [
-              {
-                label: 'Website',
-                href: 'https://www.procifynow.com',
-              },
-              {
-                label: 'experts@procifynow.com',
-                href: 'mailto:experts@procifynow.com',
-              },
-            ],
-          },
-        ],
+      copyright: `© ${new Date().getFullYear()} Procify Innovations Pvt Ltd.`,
+    },
 
-        copyright: `© ${new Date().getFullYear()} Procify Innovations Pvt Ltd.`,
-      },
-
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
-    }),
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
+  },
 };
 
 export default config;
