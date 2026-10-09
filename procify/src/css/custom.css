@@ -238,3 +238,21 @@ pre code {
   outline: 2px solid var(--ifm-color-primary);
   outline-offset: 2px;
 }
+/* Procify homepage hero background */
+:root {
+  --hero-bg: url('/img/procify-docs-hero-light_2x.png');
+  --hero-bg-dark: url('/img/procify-docs-hero-dark_2x.png');
+}
+/* Laptops (1280–1439px): scale the hexagons down so they clear the title */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  header[class*='hero_'] {
+    background-size: auto 78%;
+  }
+}
+/* Below 1280px: plain hero, no background */
+@media (max-width: 1279px) {
+  :root {
+    --hero-bg: none;
+    --hero-bg-dark: none;
+  }
+}

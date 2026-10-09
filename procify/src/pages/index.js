@@ -1,159 +1,183 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import Heading from '@theme/Heading';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
  
-const VERSION = '7.7.564';
+/* ---- Content: edit here when a new release ships ---- */
+const LATEST_RELEASE = '7.7.564';
  
-const DOCS = {
-  user: '/docs/Docs/user Guide/basic user guide',
-  training: '/docs/Docs/Training Guide/Basic Training',
-  release: '/docs/Docs/Release Notes/7.7.564',
+const LINKS = {
+  userGuide: '/docs/Docs/user Guide/basic user guide',
+  trainingGuide: '/docs/Docs/Training Guide/Basic Training',
+  releaseNotes: `/docs/Docs/Release Notes/${LATEST_RELEASE}`,
 };
  
-const guides = [
+const CARDS = [
   {
     icon: '📘',
     title: 'User Guide',
     text: 'Learn how to configure and use Procify features and functionality.',
     cta: 'Open User Guide',
-    to: DOCS.user,
+    to: LINKS.userGuide,
   },
   {
     icon: '🎓',
     title: 'Training Guide',
     text: 'Follow structured training material to learn Procify development and configuration.',
     cta: 'Open Training Guide',
-    to: DOCS.training,
+    to: LINKS.trainingGuide,
   },
   {
     icon: '📋',
     title: 'Release Notes',
     text: 'Review new features, enhancements, fixes and changes introduced in Procify releases.',
     cta: 'View Release Notes',
-    to: DOCS.release,
+    to: LINKS.releaseNotes,
   },
 ];
  
-const features = [
+/* Lucide icons (ISC licence), 1.5px stroke as in the Procify design system */
+const ICONS = {
+  layout: (
+    <>
+      <rect width="7" height="9" x="3" y="3" rx="1" />
+      <rect width="7" height="5" x="14" y="3" rx="1" />
+      <rect width="7" height="9" x="14" y="12" rx="1" />
+      <rect width="7" height="5" x="3" y="16" rx="1" />
+    </>
+  ),
+  layers: (
+    <>
+      <path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" />
+      <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
+      <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
+    </>
+  ),
+  sync: (
+    <>
+      <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+      <path d="M21 3v5h-5" />
+      <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+      <path d="M8 16H3v5" />
+    </>
+  ),
+  plug: (
+    <>
+      <path d="M12 22v-5" />
+      <path d="M9 8V2" />
+      <path d="M15 8V2" />
+      <path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" />
+    </>
+  ),
+  calendar: (
+    <>
+      <rect width="18" height="18" x="3" y="4" rx="2" />
+      <path d="M16 2v4" />
+      <path d="M8 2v4" />
+      <path d="M3 10h18" />
+      <path d="m9 16 2 2 4-4" />
+    </>
+  ),
+};
+ 
+const FEATURES = [
   {
+    icon: 'layout',
     title: 'Low-code visual tools',
     text: 'Design data models, screens and workflows in visual editors. Most tasks need no complex coding.',
-    icon: (
-      <>
-        <rect width="7" height="9" x="3" y="3" rx="1" />
-        <rect width="7" height="5" x="14" y="3" rx="1" />
-        <rect width="7" height="9" x="14" y="12" rx="1" />
-        <rect width="7" height="5" x="3" y="16" rx="1" />
-      </>
-    ),
   },
   {
+    icon: 'layers',
     title: 'Build once, deploy anywhere',
     text: 'A single design works as both a web portal and a mobile app, on Android and iOS.',
-    icon: (
-      <>
-        <path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" />
-        <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
-        <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
-      </>
-    ),
   },
   {
+    icon: 'sync',
     title: 'Online and offline support',
     text: 'Apps work without internet. Data syncs automatically when connectivity returns.',
-    icon: (
-      <>
-        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
-        <path d="M21 3v5h-5" />
-        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
-        <path d="M8 16H3v5" />
-      </>
-    ),
   },
   {
+    icon: 'plug',
     title: 'Enterprise integrations',
     text: 'Built-in connectors for SAP, OData and custom APIs, so you can plug into existing systems.',
-    icon: (
-      <>
-        <path d="M12 22v-5" />
-        <path d="M9 8V2" />
-        <path d="M15 8V2" />
-        <path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" />
-      </>
-    ),
   },
   {
+    icon: 'calendar',
     title: 'Monthly platform updates',
     text: 'Procify releases improvements every month, without rebuilding your apps from scratch.',
-    icon: (
-      <>
-        <rect width="18" height="18" x="3" y="4" rx="2" />
-        <path d="M16 2v4" />
-        <path d="M8 2v4" />
-        <path d="M3 10h18" />
-        <path d="m9 16 2 2 4-4" />
-      </>
-    ),
   },
 ];
  
-const quick = [
-  {label: 'Getting Started', to: DOCS.user},
-  {label: 'Basic Training', to: DOCS.training},
-  {label: "What's New", to: DOCS.release},
+const QUICK_LINKS = [
+  { label: 'Getting Started', to: LINKS.userGuide },
+  { label: 'Basic Training', to: LINKS.trainingGuide },
+  { label: "What's New", to: LINKS.releaseNotes },
 ];
  
+function Icon({ name }) {
+  return (
+    <svg
+      className={styles.featureIcon}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true">
+      {ICONS[name]}
+    </svg>
+  );
+}
+ 
 function Hero() {
-  const bgLight = useBaseUrl('/img/procify-hero-bg.svg');
-  const bgDark = useBaseUrl('/img/procify-hero-bg-dark.svg');
+  // useBaseUrl adds the site's baseUrl (/Technical-Documentation/) to the image paths
+  const heroBg = useBaseUrl('/img/procify-docs-hero-light@2x.png');
+  const heroBgDark = useBaseUrl('/img/procify-docs-hero-dark@2x.png');
+ 
   return (
     <header
       className={styles.hero}
-      style={{'--hero-bg': `url(${bgLight})`, '--hero-bg-dark': `url(${bgDark})`}}>
+      style={{
+        '--hero-bg': `url("${heroBg}")`,
+        '--hero-bg-dark': `url("${heroBgDark}")`,
+      }}>
       <div className={styles.container}>
         <p className={styles.eyebrow}>Documentation</p>
-        <Heading as="h1" className={styles.heroTitle}>
-          Procify Technical Documentation
-        </Heading>
+        <h1 className={styles.heroTitle}>Procify Technical Documentation</h1>
         <p className={styles.heroLead}>
-          An enterprise-class low-code platform for transforming business ideas
-          into outcomes.
+          An enterprise-class low-code platform for transforming business ideas into outcomes.
         </p>
         <div className={styles.actions}>
-          <Link className={styles.btnPrimary} to={DOCS.user}>
+          <Link className={styles.btnPrimary} to={LINKS.userGuide}>
             Get started →
           </Link>
-          <Link className={styles.btnGhost} to={DOCS.release}>
-            What's new in {VERSION}
+          <Link className={styles.btnGhost} to={LINKS.releaseNotes}>
+            What&apos;s new in {LATEST_RELEASE}
           </Link>
         </div>
-        <span className={styles.version}>Latest release {VERSION}</span>
+        <span className={styles.version}>Latest release {LATEST_RELEASE}</span>
       </div>
     </header>
   );
 }
  
-function Guides() {
+function DocCards() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <Heading as="h2" className={styles.h2}>
-          Find what you need
-        </Heading>
+        <h2 className={styles.h2}>Find what you need</h2>
         <div className={styles.cards}>
-          {guides.map((g) => (
-            <Link key={g.title} to={g.to} className={styles.card}>
+          {CARDS.map((card) => (
+            <Link key={card.title} className={styles.card} to={card.to}>
               <span className={styles.cardIcon} aria-hidden="true">
-                {g.icon}
+                {card.icon}
               </span>
-              <Heading as="h3" className={styles.cardTitle}>
-                {g.title}
-              </Heading>
-              <p className={styles.cardText}>{g.text}</p>
-              <span className={styles.cardCta}>{g.cta} →</span>
+              <h3 className={styles.cardTitle}>{card.title}</h3>
+              <p className={styles.cardText}>{card.text}</p>
+              <span className={styles.cardCta}>{card.cta} →</span>
             </Link>
           ))}
         </div>
@@ -167,28 +191,16 @@ function Features() {
     <section className={`${styles.section} ${styles.alt}`}>
       <div className={styles.container}>
         <p className={styles.eyebrow}>Key features</p>
-        <Heading as="h2" className={styles.h2}>
+        <h2 className={styles.h2}>
           Configure enterprise apps visually, then run them on web and mobile
-        </Heading>
+        </h2>
         <ul className={styles.features}>
-          {features.map((f) => (
-            <li key={f.title} className={styles.feature}>
-              <svg
-                className={styles.featureIcon}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true">
-                {f.icon}
-              </svg>
+          {FEATURES.map((feature) => (
+            <li key={feature.title} className={styles.feature}>
+              <Icon name={feature.icon} />
               <div>
-                <Heading as="h3" className={styles.featureTitle}>
-                  {f.title}
-                </Heading>
-                <p className={styles.featureText}>{f.text}</p>
+                <h3 className={styles.featureTitle}>{feature.title}</h3>
+                <p className={styles.featureText}>{feature.text}</p>
               </div>
             </li>
           ))}
@@ -202,13 +214,11 @@ function QuickAccess() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <Heading as="h2" className={styles.h2}>
-          Quick access
-        </Heading>
+        <h2 className={styles.h2}>Quick access</h2>
         <div className={styles.quick}>
-          {quick.map((q) => (
-            <Link key={q.label} to={q.to} className={styles.pill}>
-              {q.label}
+          {QUICK_LINKS.map((link) => (
+            <Link key={link.label} className={styles.pill} to={link.to}>
+              {link.label}
             </Link>
           ))}
         </div>
@@ -218,13 +228,12 @@ function QuickAccess() {
 }
  
 export default function Home() {
+  const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title="Procify Technical Documentation"
-      description="Procify user guide, training guide and release notes.">
+    <Layout title={siteConfig.title} description="Procify Technical Documentation">
       <Hero />
       <main>
-        <Guides />
+        <DocCards />
         <Features />
         <QuickAccess />
       </main>
