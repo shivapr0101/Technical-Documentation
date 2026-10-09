@@ -1,5 +1,4 @@
 // @ts-check
-
 import {themes as prismThemes} from 'prism-react-renderer';
 import {createRequire} from 'module';
 
@@ -14,7 +13,7 @@ const config = {
 
   favicon: 'img/procify-favicon.png',
 
-  // GitHub Pages configuration
+  // GitHub Pages
   url: 'https://shivapr0101.github.io',
   baseUrl: '/Technical-Documentation/',
   organizationName: 'shivapr0101',
@@ -46,6 +45,7 @@ const config = {
       {
         docs: {
           sidebarPath: './sidebars.js',
+          includeCurrentVersion: true,
           breadcrumbs: true,
         },
         blog: false,
@@ -79,12 +79,11 @@ const config = {
       disableSwitch: false,
     },
 
-    // Top navigation
     navbar: {
       title: 'Procify Documentation',
 
       logo: {
-        alt: 'Procify Logo',
+        alt: 'Procify',
         src: 'img/procify-logo.png',
         srcDark: 'img/procify-logo-dark.png',
         href: '/Technical-Documentation/',
@@ -95,6 +94,7 @@ const config = {
           to: '/',
           label: 'Home',
           position: 'left',
+          activeBaseOptional: true,
           exact: true,
         },
         {
@@ -134,7 +134,6 @@ const config = {
       ],
     },
 
-    // Documentation sidebar
     docs: {
       sidebar: {
         hideable: true,
@@ -142,7 +141,6 @@ const config = {
       },
     },
 
-    // Footer
     footer: {
       style: 'light',
 
