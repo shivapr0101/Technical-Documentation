@@ -1,147 +1,445 @@
-/* src/pages/index.module.css */
-
-.heroBanner {
-min-height: 460px;
-padding: 6rem 2rem;
-display: flex;
-align-items: center;
-background: linear-gradient(
-120deg,
-#ffffff 0%,
-#fff5f5 55%,
-#fce5e7 100%
-);
-position: relative;
-overflow: hidden;
+.page {
+  min-height: calc(100vh - 54px);
+  background: #ffffff;
 }
 
-.heroBanner (.container) {
-position: relative;
-z-index: 1;
-width: 100%;
-max-width: 1200px;
-margin: 0 auto;
+/* =========================================================
+   COMPANY HERO
+   ========================================================= */
+
+.companyHero {
+  border-bottom: 1px solid #dfe5e9;
+  background: #f7f9fb;
 }
 
-.heroBanner h1 {
-max-width: 850px;
-margin-bottom: 1.25rem;
-color: #b5121b;
-font-size: clamp(2.4rem, 5vw, 4rem);
-font-weight: 750;
-line-height: 1.15;
+.companyContent {
+  max-width: 1180px;
+
+  min-height: 410px;
+
+  margin: 0 auto;
+
+  padding: 55px 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 70px;
 }
 
-.heroBanner p {
-max-width: 720px;
-margin: 0 auto 2rem;
-color: #3c4654;
-font-size: clamp(1.05rem, 2vw, 1.3rem);
-line-height: 1.8;
+.companyImage {
+  width: 330px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
 }
 
-.buttons {
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center;
-gap: 1rem;
-margin-top: 2rem;
+.companyImage img {
+  max-width: 100%;
+
+  max-height: 250px;
+
+  object-fit: contain;
 }
 
-.buttons a {
-padding: 0.85rem 1.6rem;
-border: 1px solid #b5121b;
-border-radius: 6px;
-font-weight: 600;
-text-decoration: none;
-transition: all 0.2s ease;
+.companyText {
+  max-width: 700px;
 }
 
-.buttons a {
-background: #b5121b;
-color: #ffffff;
+.eyebrow {
+  margin-bottom: 12px;
+
+  color: #0a6ed1;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
 }
 
-.buttons a:first-child {
-background: #8f0d15;
-color: #ffffff;
-transform: translateY(-2px);
+.companyText h1 {
+  margin: 0 0 18px;
+
+  color: #1d2d3e;
+
+  font-size: 38px;
+
+  line-height: 1.2;
+
+  font-weight: 600;
 }
 
-.buttons a() {
-background: #ffffff;
-color: #b5121b;
+.companyText p {
+  max-width: 650px;
+
+  margin: 0 0 28px;
+
+  color: #526575;
+
+  font-size: 18px;
+
+  line-height: 1.6;
 }
 
-.buttons a() {
-background: #fff0f0;
-transform: translateY(-2px);
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.actions {
+  display: flex;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
 }
 
-.features {
-width: 100%;
-padding: 4rem 0;
-background: #ffffff;
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0 18px;
+
+  border-radius: 3px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-decoration: none;
 }
 
-.feature {
-padding: 1.25rem;
+.primaryButton {
+  color: #ffffff;
+
+  background: #0a6ed1;
+
+  border: 1px solid #0a6ed1;
 }
 
-.feature h2 {
-color: #b5121b;
-font-size: 1.4rem;
-font-weight: 700;
+.primaryButton:hover {
+  color: #ffffff;
+
+  background: #0854a0;
+
+  border-color: #0854a0;
+
+  text-decoration: none;
 }
 
-.feature p {
-color: #566170;
-font-size: 1rem;
-line-height: 1.75;
+.secondaryButton {
+  color: #0a6ed1;
+
+  background: #ffffff;
+
+  border: 1px solid #aebbc5;
 }
 
-.feature a {
-color: #b5121b;
-font-weight: 600;
-text-decoration: none;
+.secondaryButton:hover {
+  color: #0854a0;
+
+  border-color: #0a6ed1;
+
+  background: #f5faff;
+
+  text-decoration: none;
 }
 
-.feature a {
-text-decoration: underline;
+/* =========================================================
+   COMMON CONTAINER
+   ========================================================= */
+
+.container {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 55px 40px;
 }
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.sectionHeader {
+  max-width: 780px;
+
+  margin-bottom: 32px;
+}
+
+.sectionHeader > span {
+  color: #0a6ed1;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+}
+
+.sectionHeader h2 {
+  margin: 8px 0 10px;
+
+  color: #263746;
+
+  font-size: 26px;
+
+  font-weight: 600;
+}
+
+.sectionHeader p {
+  margin: 0;
+
+  color: #5f6b76;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   KEY FACTORS
+   ========================================================= */
+
+.keySection {
+  background: #ffffff;
+}
+
+.keyGrid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+.keyCard {
+  min-height: 215px;
+
+  padding: 22px;
+
+  border: 1px solid #d9e0e5;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+}
+
+.keyCard:hover {
+  border-color: #0a6ed1;
+
+  background: #f9fcff;
+}
+
+.keyIcon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 42px;
+
+  height: 42px;
+
+  margin-bottom: 18px;
+
+  border-radius: 4px;
+
+  background: #e8f2fc;
+
+  font-size: 20px;
+}
+
+.keyCard h3 {
+  margin: 0 0 10px;
+
+  color: #263746;
+
+  font-size: 17px;
+
+  font-weight: 600;
+}
+
+.keyCard p {
+  margin: 0;
+
+  color: #5f6b76;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   DOCUMENTATION SECTION
+   ========================================================= */
+
+.documentationSection {
+  border-top: 1px solid #e1e6ea;
+
+  background: #f7f9fb;
+}
+
+.documentationGrid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.documentationCard {
+  display: flex;
+
+  gap: 18px;
+
+  min-height: 150px;
+
+  padding: 22px;
+
+  border: 1px solid #d9e0e5;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.documentationCard:hover {
+  border-color: #0a6ed1;
+
+  background: #f8fbfd;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+
+  text-decoration: none;
+}
+
+.cardIcon {
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 42px;
+
+  height: 42px;
+
+  border-radius: 4px;
+
+  background: #e8f2fc;
+
+  font-size: 20px;
+}
+
+.documentationCard h3 {
+  margin: 0 0 8px;
+
+  color: #0a6ed1;
+
+  font-size: 17px;
+
+  font-weight: 600;
+}
+
+.documentationCard p {
+  margin: 0 0 12px;
+
+  color: #5f6b76;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+.documentationCard span {
+  color: #0a6ed1;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
 @media screen and (max-width: 996px) {
-.heroBanner {
-min-height: 400px;
-padding: 4rem 1.5rem;
-}
+  .companyContent {
+    padding: 45px 25px;
+
+    gap: 35px;
+  }
+
+  .companyImage {
+    width: 240px;
+  }
+
+  .companyText h1 {
+    font-size: 32px;
+  }
+
+  .keyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .documentationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 45px 25px;
+  }
 }
 
-@media screen and (max-width: 576px) {
-.heroBanner {
-min-height: 360px;
-padding: 3rem 1rem;
-}
+@media screen and (max-width: 650px) {
+  .companyContent {
+    flex-direction: column;
 
-.heroBanner h1 {
-font-size: 2.2rem;
-}
+    align-items: flex-start;
 
-.heroBanner p {
-font-size: 1rem;
-}
+    padding: 40px 20px;
+  }
 
-.buttons {
-flex-direction: column;
-align-items: stretch;
-}
+  .companyImage {
+    width: 180px;
+  }
 
-.buttons a {
-text-align: center;
-}
+  .companyText h1 {
+    font-size: 29px;
+  }
 
-.features {
-padding: 2rem 0;
-}
+  .companyText p {
+    font-size: 16px;
+  }
+
+  .keyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 40px 20px;
+  }
 }
