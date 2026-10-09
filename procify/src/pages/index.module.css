@@ -1,31 +1,20 @@
 /* src/pages/index.module.css */
 
-/* Main hero section */
 .heroBanner {
-position: relative;
-overflow: hidden;
-padding: 6rem 2rem;
 min-height: 460px;
+padding: 6rem 2rem;
 display: flex;
 align-items: center;
-
-background-color: #ffffff;
-background-image:
-linear-gradient(
-90deg,
-rgba(255, 255, 255, 0.97) 0%,
-rgba(255, 255, 255, 0.91) 42%,
-rgba(255, 255, 255, 0.48) 72%,
-rgba(255, 255, 255, 0.18) 100%
-),
-url('/Technical-Documentation/img/procify-docs-hero-light.png');
-
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+background: linear-gradient(
+120deg,
+#ffffff 0%,
+#fff5f5 55%,
+#fce5e7 100%
+);
+position: relative;
+overflow: hidden;
 }
 
-/* Hero content container */
 .heroBanner (.container) {
 position: relative;
 z-index: 1;
@@ -34,7 +23,6 @@ max-width: 1200px;
 margin: 0 auto;
 }
 
-/* Main heading */
 .heroBanner h1 {
 max-width: 850px;
 margin-bottom: 1.25rem;
@@ -42,10 +30,8 @@ color: #b5121b;
 font-size: clamp(2.4rem, 5vw, 4rem);
 font-weight: 750;
 line-height: 1.15;
-letter-spacing: -1.5px;
 }
 
-/* Description below heading */
 .heroBanner p {
 max-width: 720px;
 margin: 0 auto 2rem;
@@ -54,7 +40,6 @@ font-size: clamp(1.05rem, 2vw, 1.3rem);
 line-height: 1.8;
 }
 
-/* Hero buttons */
 .buttons {
 display: flex;
 flex-wrap: wrap;
@@ -64,81 +49,58 @@ gap: 1rem;
 margin-top: 2rem;
 }
 
-/* Primary action */
 .buttons a {
+padding: 0.85rem 1.6rem;
 border: 1px solid #b5121b;
 border-radius: 6px;
-background: #b5121b;
-color: #ffffff;
-padding: 0.85rem 1.6rem;
-font-size: 1rem;
 font-weight: 600;
 text-decoration: none;
-transition:
-background-color 0.2s ease,
-transform 0.2s ease,
-box-shadow 0.2s ease;
+transition: all 0.2s ease;
+}
+
+.buttons a {
+background: #b5121b;
+color: #ffffff;
 }
 
 .buttons a:first-child {
 background: #8f0d15;
-border-color: #8f0d15;
 color: #ffffff;
 transform: translateY(-2px);
-box-shadow: 0 6px 18px rgba(181, 18, 27, 0.2);
 }
 
-/* Secondary action */
 .buttons a() {
-border: 1px solid #b5121b;
-border-radius: 6px;
-background: rgba(255, 255, 255, 0.85);
+background: #ffffff;
 color: #b5121b;
-padding: 0.85rem 1.6rem;
-font-size: 1rem;
-font-weight: 600;
-text-decoration: none;
-transition:
-background-color 0.2s ease,
-transform 0.2s ease;
 }
 
 .buttons a() {
 background: #fff0f0;
-color: #8f0d15;
 transform: translateY(-2px);
 }
 
-/* Documentation feature section */
 .features {
-display: flex;
-align-items: stretch;
-padding: 4rem 0;
 width: 100%;
+padding: 4rem 0;
 background: #ffffff;
 }
 
-/* Individual feature column */
 .feature {
 padding: 1.25rem;
 }
 
-/* Feature title */
 .feature h2 {
-margin-bottom: 0.75rem;
 color: #b5121b;
 font-size: 1.4rem;
 font-weight: 700;
 }
 
-/* Feature description */
 .feature p {
 color: #566170;
 font-size: 1rem;
 line-height: 1.75;
 }
 
-/* Feature links */
 .feature a {
 color: #b5121b;
 font-weight: 600;
@@ -146,43 +108,13 @@ text-decoration: none;
 }
 
 .feature a {
-color: #8f0d15;
 text-decoration: underline;
 }
 
-/* Feature cards, if used in the homepage */
-.featureCard {
-height: 100%;
-padding: 1.75rem;
-border: 1px solid #e8e8e8;
-border-top: 3px solid #b5121b;
-border-radius: 10px;
-background: #ffffff;
-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-transition:
-transform 0.2s ease,
-box-shadow 0.2s ease;
-}
-
-.featureCard {
-transform: translateY(-4px);
-box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-}
-
-/* Responsive layout for tablets and mobile devices */
 @media screen and (max-width: 996px) {
 .heroBanner {
 min-height: 400px;
 padding: 4rem 1.5rem;
-background-position: 60% center;
-}
-
-.heroBanner h1 {
-letter-spacing: -0.8px;
-}
-
-.features {
-padding: 2.5rem 0;
 }
 }
 
@@ -190,31 +122,19 @@ padding: 2.5rem 0;
 .heroBanner {
 min-height: 360px;
 padding: 3rem 1rem;
-background-image:
-  linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.97) 0%,
-    rgba(255, 255, 255, 0.82) 48%,
-    rgba(255, 255, 255, 0.2) 100%
-  ),
-  url('/Technical-Documentation/img/procify-docs-hero-light.png');
-background-position: center;
 }
 
 .heroBanner h1 {
 font-size: 2.2rem;
-line-height: 1.2;
 }
 
 .heroBanner p {
 font-size: 1rem;
-line-height: 1.65;
 }
 
 .buttons {
 flex-direction: column;
 align-items: stretch;
-gap: 0.75rem;
 }
 
 .buttons a {
@@ -223,22 +143,5 @@ text-align: center;
 
 .features {
 padding: 2rem 0;
-}
-
-.feature {
-padding: 0.75rem;
-}
-}
-
-/* Accessibility: reduce motion when requested */
-@media (prefers-reduced-motion: reduce) {
-.buttons a,
-.featureCard {
-transition: none;
-}
-
-.buttons a,
-.featureCard {
-transform: none;
 }
 }
