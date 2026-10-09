@@ -12,7 +12,19 @@ const config = {
   tagline:
     'An enterprise-class low-code platform for transforming business ideas into outcomes',
 
-  favicon: 'img/procify-favicon.png',
+  favicon: 'img/favicon.ico',
+
+  // SEO metadata
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'keywords',
+        content:
+          'Procify, documentation, user guide, training guide, release notes',
+      },
+    },
+  ],
 
   // GitHub Pages configuration
   url: 'https://shivapr0101.github.io',
@@ -28,17 +40,6 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
-  headTags: [
-    {
-      tagName: 'meta',
-      attributes: {
-        name: 'keywords',
-        content:
-          'Procify, documentation, user guide, training guide, release notes',
-      },
-    },
-  ],
 
   presets: [
     [
@@ -195,6 +196,11 @@ const config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+  },
+
+  // Markdown configuration
+  markdown: {
+    format: 'detect',
   },
 };
 
