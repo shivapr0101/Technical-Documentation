@@ -28,16 +28,29 @@
   padding: 0 24px;
 }
  
-/* ---------- Hero with hexagon background ---------- */
-.hero {
-  background-color: var(--p-surface);
-  background-image: var(--hero-bg);
-  background-position: right center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-bottom: 1px solid var(--p-line);
-  color: var(--p-ink);
-  padding: 104px 0 88px;
+/* Procify homepage hero background */
+:root {
+  --hero-bg: url('/img/procify-docs-hero-light_2x.png');
+  --hero-bg-dark: url('/img/procify-docs-hero-dark_2x.png');
+}
+/* 1280–1439px wide: scale the hexagons down so they clear the title */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  header[class*='hero_'] {
+    background-size: auto 78%;
+  }
+}
+/* 1150–1279px wide (e.g. laptops with 125–150% Windows display scaling) */
+@media (min-width: 1150px) and (max-width: 1279px) {
+  header[class*='hero_'] {
+    background-size: auto 60%;
+  }
+}
+/* Below 1150px: plain hero, no background */
+@media (max-width: 1149px) {
+  :root {
+    --hero-bg: none;
+    --hero-bg-dark: none;
+  }
 }
  
 [data-theme='dark'] .hero {
