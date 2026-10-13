@@ -1,11 +1,11 @@
 /**
  * Procify Technical Documentation
  *
- * OpenUI5-style documentation navigation.
+ * One sidebar per folder, so Previous/Next stays inside the same folder.
  */
 
 const sidebars = {
-  technicalDocumentation: [
+  userGuideSidebar: [
     {
       type: 'category',
       label: 'User Guide',
@@ -18,7 +18,9 @@ const sidebars = {
         },
       ],
     },
+  ],
 
+  trainingGuideSidebar: [
     {
       type: 'category',
       label: 'Training Guide',
@@ -29,9 +31,16 @@ const sidebars = {
           id: 'Docs/Training Guide/Basic Training',
           label: 'Basic Training',
         },
+        {
+          type: 'doc',
+          id: 'Docs/Training Guide/Advance Training Guide',
+          label: 'Advanced Training Guide',
+        },
       ],
     },
+  ],
 
+  releaseNotesSidebar: [
     {
       type: 'category',
       label: 'Release Notes',

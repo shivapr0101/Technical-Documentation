@@ -80,6 +80,12 @@ const config = {
       disableSwitch: false,
     },
 
+    // Right-hand "On this page" panel: show only ## headings
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 2,
+    },
+
     // Top navigation
     navbar: {
       title: 'Procify Documentation',
@@ -99,28 +105,21 @@ const config = {
           exact: true,
         },
         {
-          to: '/docs/Docs/user Guide/basic user guide',
-          label: 'Documentation',
+          type: 'docSidebar',
+          sidebarId: 'userGuideSidebar',
+          label: 'User Guide',
           position: 'left',
-          activeBaseRegex: '/docs/',
         },
         {
-          label: 'Guides',
+          type: 'docSidebar',
+          sidebarId: 'trainingGuideSidebar',
+          label: 'Training Guide',
           position: 'left',
-          items: [
-            {
-              label: 'User Guide',
-              to: '/docs/Docs/user Guide/basic user guide',
-            },
-            {
-              label: 'Training Guide',
-              to: '/docs/Docs/Training Guide/Basic Training',
-            },
-          ],
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'releaseNotesSidebar',
           label: 'Release Notes',
-          to: '/docs/Docs/Release Notes/7.7.564',
           position: 'left',
         },
         {
@@ -156,8 +155,12 @@ const config = {
               to: '/docs/Docs/user Guide/basic user guide',
             },
             {
-              label: 'Training Guide',
+              label: 'Basic Training',
               to: '/docs/Docs/Training Guide/Basic Training',
+            },
+            {
+              label: 'Advanced Training',
+              to: '/docs/Docs/Training Guide/Advance Training Guide',
             },
             {
               label: 'Release Notes',
