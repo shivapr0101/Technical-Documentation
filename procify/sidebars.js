@@ -5,7 +5,7 @@
  */
 
 const sidebars = {
-  userGuideSidebar: [
+  UserGuideSidebar: [
     {
       type: 'category',
       label: 'User Guide',
@@ -13,8 +13,8 @@ const sidebars = {
       items: [
         {
           type: 'doc',
-          id: 'Docs/user Guide/basic user guide',
-          label: 'Basic User Guide',
+          id: 'Docs/User Guide/Developer AI - guide',
+          label: 'Developer AI - guide',
         },
       ],
     },
