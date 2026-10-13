@@ -86,7 +86,7 @@ const config = {
  
     // Top navigation
     navbar: {
-      title: 'Procify Documentation',
+      title: 'Procify Documentation Center',
  
       logo: {
         alt: 'Procify Logo',
