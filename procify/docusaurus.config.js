@@ -1,6 +1,3 @@
-The only change is in the navbar items section. The Training Guide item (type: 'docSidebar', sidebarId: 'trainingGuideSidebar') is replaced with a dropdown item, marked with a comment below. Here is your full config:
-
-javascript
 // @ts-check
 
 import {themes as prismThemes} from 'prism-react-renderer';
