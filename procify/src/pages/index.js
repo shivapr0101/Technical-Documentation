@@ -3,18 +3,18 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-
+ 
 import styles from './index.module.css';
-
+ 
 /* Latest release */
 const LATEST_RELEASE = '7.7.564';
-
+ 
 const LINKS = {
-  userGuide: '/docs/Docs/user%20Guide/basic%20user%20guide',
-  trainingGuide: '/docs/Docs/Training%20Guide/Basic%20Training',
+  userGuide: '/docs/Docs/User%20Guide/Developer%20AI%20-%20User%20guide',
+  trainingGuide: '/docs/Docs/Training%20Guide/Advance%20Training%20Guide',
   releaseNotes: `/docs/Docs/Release%20Notes/${LATEST_RELEASE}`,
 };
-
+ 
 const CARDS = [
   {
     icon: '📘',
@@ -38,7 +38,7 @@ const CARDS = [
     to: LINKS.releaseNotes,
   },
 ];
-
+ 
 /* Feature icons */
 const ICONS = {
   layout: (
@@ -82,7 +82,7 @@ const ICONS = {
     </>
   ),
 };
-
+ 
 const FEATURES = [
   {
     icon: 'layout',
@@ -110,13 +110,13 @@ const FEATURES = [
     text: 'Procify releases improvements every month, without rebuilding your apps from scratch.',
   },
 ];
-
+ 
 const QUICK_LINKS = [
   { label: 'Getting Started', to: LINKS.userGuide },
-  { label: 'Basic Training', to: LINKS.trainingGuide },
+  { label: 'Training Guide', to: LINKS.trainingGuide },
   { label: "What's New", to: LINKS.releaseNotes },
 ];
-
+ 
 function Icon({ name }) {
   return (
     <svg
@@ -133,12 +133,12 @@ function Icon({ name }) {
     </svg>
   );
 }
-
+ 
 function Hero() {
   const heroBackground = useBaseUrl(
     '/img/procify-docs-hero-light_2x.png',
   );
-
+ 
   return (
     <header
       className={styles.heroBanner}
@@ -153,26 +153,26 @@ function Hero() {
     >
       <div className={styles.container}>
         <p className={styles.eyebrow}>Documentation</p>
-
+ 
         <h1 className={styles.heroTitle}>
           Procify Technical Documentation
         </h1>
-
+ 
         <p className={styles.heroLead}>
           An enterprise-class low-code platform for transforming business
           ideas into outcomes.
         </p>
-
+ 
         <div className={styles.actions}>
           <Link className={styles.btnPrimary} to={LINKS.userGuide}>
             Get started →
           </Link>
-
+ 
           <Link className={styles.btnGhost} to={LINKS.releaseNotes}>
             What&apos;s new in {LATEST_RELEASE}
           </Link>
         </div>
-
+ 
         <span className={styles.version}>
           Latest release {LATEST_RELEASE}
         </span>
@@ -180,13 +180,13 @@ function Hero() {
     </header>
   );
 }
-
+ 
 function DocCards() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.h2}>Find what you need</h2>
-
+ 
         <div className={styles.cards}>
           {CARDS.map((card) => (
             <Link
@@ -197,10 +197,10 @@ function DocCards() {
               <span className={styles.cardIcon} aria-hidden="true">
                 {card.icon}
               </span>
-
+ 
               <h3 className={styles.cardTitle}>{card.title}</h3>
               <p className={styles.cardText}>{card.text}</p>
-
+ 
               <span className={styles.cardCta}>
                 {card.cta} →
               </span>
@@ -211,22 +211,22 @@ function DocCards() {
     </section>
   );
 }
-
+ 
 function Features() {
   return (
     <section className={`${styles.section} ${styles.alt}`}>
       <div className={styles.container}>
         <p className={styles.eyebrow}>Key features</p>
-
+ 
         <h2 className={styles.h2}>
           Configure enterprise apps visually, then run them on web and mobile
         </h2>
-
+ 
         <ul className={styles.features}>
           {FEATURES.map((feature) => (
             <li key={feature.title} className={styles.feature}>
               <Icon name={feature.icon} />
-
+ 
               <div>
                 <h3 className={styles.featureTitle}>
                   {feature.title}
@@ -240,13 +240,13 @@ function Features() {
     </section>
   );
 }
-
+ 
 function QuickAccess() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.h2}>Quick access</h2>
-
+ 
         <div className={styles.quick}>
           {QUICK_LINKS.map((link) => (
             <Link
@@ -262,17 +262,17 @@ function QuickAccess() {
     </section>
   );
 }
-
+ 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
-
+ 
   return (
     <Layout
       title={siteConfig.title}
       description={siteConfig.tagline}
     >
       <Hero />
-
+ 
       <main>
         <DocCards />
         <Features />
