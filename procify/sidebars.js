@@ -47,9 +47,15 @@ const sidebars = {
           id: 'Docs/Release Notes/7.7.564',
           label: '7.7.564',
         },
+        {
+          type: 'doc',
+          id: 'Docs/Release Notes/7.2.359',
+          label: '7.2.359',
+        },
       ],
     },
   ],
 };
  
 export default sidebars;
+ 
