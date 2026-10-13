@@ -3,7 +3,7 @@
  *
  * One sidebar per folder, so Previous/Next stays inside the same folder.
  */
-
+ 
 const sidebars = {
   UserGuideSidebar: [
     {
@@ -13,24 +13,20 @@ const sidebars = {
       items: [
         {
           type: 'doc',
-          id: 'Docs/User Guide/Developer AI - guide',
-          label: 'Developer AI - guide',
+          id: 'Docs/User Guide/Developer AI - User guide',
+          label: 'Developer AI - User guide',
         },
       ],
     },
   ],
-
+ 
   trainingGuideSidebar: [
     {
       type: 'category',
       label: 'Training Guide',
       collapsed: false,
       items: [
-        {
-          type: 'doc',
-          id: 'Docs/Training Guide/Basic Training',
-          label: 'Basic Training',
-        },
+        // Add 'Docs/Training Guide/Basic Training' back here once that file exists in docs/
         {
           type: 'doc',
           id: 'Docs/Training Guide/Advance Training Guide',
@@ -39,7 +35,7 @@ const sidebars = {
       ],
     },
   ],
-
+ 
   releaseNotesSidebar: [
     {
       type: 'category',
@@ -55,5 +51,5 @@ const sidebars = {
     },
   ],
 };
-
+ 
 export default sidebars;
