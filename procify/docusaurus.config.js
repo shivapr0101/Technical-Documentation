@@ -1,19 +1,19 @@
 // @ts-check
-
+ 
 import {themes as prismThemes} from 'prism-react-renderer';
 import {createRequire} from 'module';
-
+ 
 const require = createRequire(import.meta.url);
-
+ 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Procify Technical Documentation',
-
+ 
   tagline:
     'An enterprise-class low-code platform for transforming business ideas into outcomes',
-
+ 
   favicon: 'img/favicon.ico',
-
+ 
   // SEO metadata
   headTags: [
     {
@@ -25,22 +25,22 @@ const config = {
       },
     },
   ],
-
+ 
   // GitHub Pages configuration
   url: 'https://shivapr0101.github.io',
   baseUrl: '/Technical-Documentation/',
   organizationName: 'shivapr0101',
   projectName: 'Technical-Documentation',
   trailingSlash: false,
-
+ 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-
+ 
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
+ 
   presets: [
     [
       'classic',
@@ -56,7 +56,7 @@ const config = {
       },
     ],
   ],
-
+ 
   // Local documentation search
   plugins: [
     [
@@ -70,33 +70,33 @@ const config = {
       },
     ],
   ],
-
+ 
   themeConfig: {
     image: 'img/procify-social-card.png',
-
+ 
     colorMode: {
       defaultMode: 'light',
       respectPrefersColorScheme: false,
       disableSwitch: false,
     },
-
+ 
     // Right-hand "On this page" panel: show only ## headings
     tableOfContents: {
       minHeadingLevel: 2,
       maxHeadingLevel: 2,
     },
-
+ 
     // Top navigation
     navbar: {
       title: 'Procify Documentation',
-
+ 
       logo: {
         alt: 'Procify Logo',
         src: 'img/procify-logo.png',
         srcDark: 'img/procify-logo-dark.png',
         href: '/Technical-Documentation/',
       },
-
+ 
       items: [
         {
           to: '/',
@@ -106,22 +106,16 @@ const config = {
         },
         {
           type: 'docSidebar',
-          sidebarId: 'userGuideSidebar',
+          sidebarId: 'UserGuideSidebar', // must match sidebars.js exactly (case-sensitive)
           label: 'User Guide',
           position: 'left',
         },
-
-        // ===== CHANGED: Training Guide is now a dropdown =====
         {
           type: 'dropdown',
           label: 'Training Guide',
           position: 'left',
           items: [
-            {
-              type: 'doc',
-              docId: 'Docs/Training Guide/Basic Training',
-              label: 'Basic Training',
-            },
+            // Add 'Docs/Training Guide/Basic Training' back here once that file exists in docs/
             {
               type: 'doc',
               docId: 'Docs/Training Guide/Advance Training Guide',
@@ -129,8 +123,6 @@ const config = {
             },
           ],
         },
-        // ===== END CHANGE =====
-
         {
           type: 'docSidebar',
           sidebarId: 'releaseNotesSidebar',
@@ -148,7 +140,7 @@ const config = {
         },
       ],
     },
-
+ 
     // Documentation sidebar
     docs: {
       sidebar: {
@@ -156,23 +148,20 @@ const config = {
         autoCollapseCategories: true,
       },
     },
-
+ 
     // Footer
     footer: {
       style: 'light',
-
+ 
       links: [
         {
           title: 'Documentation',
           items: [
             {
               label: 'User Guide',
-              to: '/docs/Docs/user Guide/basic user guide',
+              to: '/docs/Docs/User Guide/Developer AI - User guide',
             },
-            {
-              label: 'Basic Training',
-              to: '/docs/Docs/Training Guide/Basic Training',
-            },
+            // Add a 'Basic Training' link here once that doc exists
             {
               label: 'Advanced Training',
               to: '/docs/Docs/Training Guide/Advance Training Guide',
@@ -206,20 +195,20 @@ const config = {
           ],
         },
       ],
-
+ 
       copyright: `© ${new Date().getFullYear()} Procify Innovations Pvt Ltd.`,
     },
-
+ 
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
   },
-
+ 
   // Markdown configuration
   markdown: {
     format: 'detect',
   },
 };
-
+ 
 export default config;
