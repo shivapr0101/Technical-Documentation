@@ -26,12 +26,19 @@ const sidebars = {
       label: 'Training Guide',
       collapsed: false,
       items: [
-        // Add 'Docs/Training Guide/Basic Training' back here once that file exists in docs/
         {
           type: 'doc',
           id: 'Docs/Training Guide/Advance Training Guide',
           label: 'Advanced Training Guide',
         },
+        { type: 'doc', id: 'Docs/Training Guide/Session 1', label: 'Session 1' },
+        { type: 'doc', id: 'Docs/Training Guide/Session 2', label: 'Session 2' },
+        { type: 'doc', id: 'Docs/Training Guide/Session 3', label: 'Session 3' },
+        { type: 'doc', id: 'Docs/Training Guide/Session 4', label: 'Session 4' },
+        { type: 'doc', id: 'Docs/Training Guide/Session 5', label: 'Session 5' },
+        { type: 'doc', id: 'Docs/Training Guide/Session 6', label: 'Session 6' },
+        { type: 'doc', id: 'Docs/Training Guide/Session 7', label: 'Session 7' },
+        { type: 'doc', id: 'Docs/Training Guide/Session 8', label: 'Session 8' },
       ],
     },
   ],
