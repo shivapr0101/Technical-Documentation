@@ -72,13 +72,11 @@ const config = {
   ],
  
   themeConfig: {
-    image: 'img/procify-social-card.png',
- 
-    colorMode: {
-      defaultMode: 'light',
-      respectPrefersColorScheme: false,
-      disableSwitch: false,
-    },
+  colorMode: {
+    defaultMode: 'light',
+    disableSwitch: true,
+    respectPrefersColorScheme: false,
+  },
  
     // Right-hand "On this page" panel: show only ## headings
     tableOfContents: {
