@@ -1,9 +1,6 @@
-/**
- * Procify Technical Documentation
- *
- * One sidebar per folder, so Previous/Next stays inside the same folder.
- */
- 
+// @ts-check
+
+/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   UserGuideSidebar: [
     {
@@ -16,17 +13,21 @@ const sidebars = {
           id: 'Docs/User Guide/Developer AI - User guide',
           label: 'Developer AI - User guide',
         },
+        {
+          type: 'doc',
+          id: 'Docs/User Guide/Heading Two',
+          label: 'Heading Two',
+        },
       ],
     },
   ],
- 
+
   trainingGuideSidebar: [
     {
       type: 'category',
       label: 'Training Guide',
       collapsed: false,
       items: [
-        // Add 'Docs/Training Guide/Basic Training' back here once that file exists in docs/
         {
           type: 'doc',
           id: 'Docs/Training Guide/Advance Training Guide',
@@ -35,7 +36,7 @@ const sidebars = {
       ],
     },
   ],
- 
+
   releaseNotesSidebar: [
     {
       type: 'category',
@@ -56,6 +57,5 @@ const sidebars = {
     },
   ],
 };
- 
-export default sidebars;
- 
+
+module.exports = sidebars;
