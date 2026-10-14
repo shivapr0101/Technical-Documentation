@@ -27,10 +27,10 @@ const config = {
   ],
  
   // GitHub Pages configuration
-  url: 'https://shivapr0101.github.io',
-  baseUrl: '/Technical-Documentation/',
-  organizationName: 'shivapr0101',
-  projectName: 'Technical-Documentation',
+  url: 'https://procifynow.github.io',
+  baseUrl: '/Procify_Documentation/',
+  organizationName: 'Procifynow',
+  projectName: 'Procify_Documentation',
   trailingSlash: false,
  
   onBrokenLinks: 'warn',
@@ -132,7 +132,7 @@ const config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/shivapr0101/Technical-Documentation',
+          href: 'https://github.com/Procifynow/Procify_Documentation',
           label: 'GitHub',
           position: 'right',
         },
@@ -188,7 +188,7 @@ const config = {
           items: [
             {
               label: 'GitHub Repository',
-              href: 'https://github.com/shivapr0101/Technical-Documentation',
+              href: 'https://github.com/Procifynow/Procify_Documentation',
             },
           ],
         },
